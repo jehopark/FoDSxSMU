@@ -1,0 +1,117 @@
+---
+title: "Foundations of Data Science and Capstone"
+author: "Jeho Park"
+date: "6/8/2021"
+output: 
+  html_document:
+    number_sections: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Course Schedule and Topics
+
+| Day | Lecture                             | Lab                               |
+|-----|-------------------------------------|-----------------------------------|
+|   1 | Introduction                        | Setting up your R environment     |
+|   2 | Data visualization                  | Getting familiar with ggplot2     |
+|   3 | Data Wrangling (1)                  | Data visualization with real data |
+|   4 | Data wrangling (2)                  | Tidying and reshaping data        |
+|   5 | Relational Data and SQL             | SQL exercise                      |
+|   6 | Exploratory Data Analysis and Stats | EDA exercise                      |
+|   7 | Working with different data types   | Strings and Factors exercise      |
+|   8 | Programming in R                    | Dates, Times, and Functions in R  |
+|   9 | Modeling                            | Modeling and visualizing data     |
+|  10 | Advanced Methods                    | Mini project and capstone prep    |
+
+=========
+
+## Day 1
+
+### Lecture: Introduction
+
+#### Introduce yourself
+
+#### Course plan and expectations
+
+#### Course format
+
+#### Introduction to Data Science
+
+
+### Lab: Setting up your R computing environment
+
+=========
+
+## Day 2
+
+### Lecture: Data visualization	
+
+### Lab: Getting familiar with ggplot2
+
+==========
+
+## Day 3
+
+### Lecture: Data Wrangling (1)	
+
+### Lab: Data visualization with real data
+
+==========
+
+## Day 4
+
+### Lecture: Data wrangling (2)	
+
+### Lab: Tidying and reshaping data
+
+
+==========
+
+## Day 5
+
+### Lecture: Relational Data and SQL	
+
+### Lab: SQL exercise
+
+==========
+
+## Day 6
+
+### Lecture: Exploratory Data Analysis and Stats	
+
+### Lab: EDA exercise
+
+==========
+
+## Day 7
+
+### Lecture: Working with different data types	
+
+### Lab: Strings and Factors exercise
+
+==========
+
+## Day 8
+
+### Lecture: Programming in R	
+
+### Lab: Dates, Times, and Functions in R 
+
+==========
+
+## Day 9
+
+### Lecture: Modeling	
+
+### Lab: Modeling and visualizing data
+
+==========
+
+## Day 10
+
+### Lecture: Advanced Methods	
+
+### Lab: Mini project and capstone prep
