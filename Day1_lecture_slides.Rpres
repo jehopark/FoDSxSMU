@@ -141,14 +141,47 @@ How to Get Help
 - Find Korean websites/community that you can ask questions about R programming (5 min)
 - Suggest them in the main room (5 min)
 
-[Hands-On] Learn R's Documentation Tools 
+
+[Hands-On] Check Your R Environment 
 ========================
-__R Markdown__
 
-1. Create a new R Markdown (Rmd) file
-1. 
+- Check R (if you don't have R, install it now)
 
-https://www.kaggle.com/WinningModelDocumentationGuidelines
+- Check RStudio (if you don't have RStudio, install it now)
+
+- Share your screen
+
+[Hands-On] First R Project 
+========================
+
+- Create a new project named "FoDSx1"
+
+Documentation: R Markdown 
+========================
+- Basic Formatting
+  - Global options
+- R Code Chunks
+  - Code chunk options
+- R Markdown cheat sheet and quick reference
+  - https://rmarkdown.rstudio.com/lesson-15.HTML
+
+
+[Hands-On] First R Markdown 
+========================
+__R Markdown__  
+
+1. Create a new R Markdown (Rmd) file named "My First Rmd"
+1. Check if you have knitr package (if not, install it)
+1. Check R Markdown Cheatsheet
+1. Check this website
+https://ntaback.github.io/UofT_STA130/Rmarkdownforclassreports.html#what_is_markdown
+
+
+[LAB1] R Markdown 
+=================
+
+ 
+
 
 
 
