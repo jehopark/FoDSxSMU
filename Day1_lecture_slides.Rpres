@@ -16,8 +16,145 @@ Introduction: Students
 # About YOU
 ```
 
-Student Learning Objectives
+Course Goal
 ========================================================
+
+__After taking this course, you’ll be able to utilize the tools required to tackle a wide variety of data science challenges using R.__
+
+Course Schedule
+========================================================
+| Day | Lecture                             | Lab                               |
+|-----|-------------------------------------|-----------------------------------|
+|   1 | Introduction                        | Setting up your R environment     |
+|   2 | Data visualization                  | Getting familiar with ggplot2     |
+|   3 | Data Wrangling (1)                  | Data visualization with real data |
+|   4 | Data wrangling (2)                  | Tidying and reshaping data        |
+|   5 | Relational Data and SQL             | SQL exercise                      |
+|   6 | Exploratory Data Analysis and Stats | EDA exercise                      |
+|   7 | Working with different data types   | Strings and Factors exercise      |
+|   8 | Programming in R                    | Dates, Times, and Functions in R  |
+|   9 | Modeling                            | Modeling and visualizing data     |
+|  10 | Advanced Methods                    | Mini project and capstone prep    |
+
+Expectations
+========================================================
+1. __Our first communication language is English__  
+    *You can selectively use Korean (as I can understand Korean well)*
+
+1. __Labs will be run by TAs__  
+    *Due to TZ issue, instructor will answer your questions on the lab projects in the evening (Korea Time)*
+
+1. __During the first 2-week study, you will need to find a capstone project__  
+    *Instructor and TAs will help you on this*
+
+Course Syllabus
+========================================================
+
+
+Text Book
+========================================================
+[Main Text] __R for Data Science by Hadley Wickham and Garrett Grolemund__
+
+- https://r4ds.had.co.nz/ (English Version)
+
+- https://sulgik.github.io/r4ds/ (Korean Version) -- This might be outdated, so check its updates.
+
+[Reference] 
+
+1. __Foundations of Data Science by Mark Huber__  
+  https://www.markhuberdatascience.org/data-science-text
+   
+2. __Hands-On Programming with R by Garrett Grolemund__  
+  https://rstudio-education.github.io/hopr/
+
+Introduction to Data Science
+========================================================
+
+
+What is Data Science?  
+=============
+
+Data science consists of the methods and tools for collecting, manipulating, and studying data with a goal of making informed decisions.
+
+[Breakout Session 1] Open Discussion
+=================
+
+5 min: Discuss briefly about what the informed decisions might be in your domain/field
+
+5 min: Share your team's example(s) when you come back to the main room.
+
+Typical Data Science Project Workflow
+===================
+```{r, out.width='80%', fig.align='center', fig.cap='Data Wrangling', echo = FALSE}
+knitr::include_graphics('./images/data-science.png')
+```
+
+R and RStudio
+=============
+
+
+What is R?
+========================================================
+* R is a statistical programming language and environment.
+* R is open source/free.
+* R is widely used/preferred.
+* R is cross-platform.
+* R is hard to learn.
+
+What is not R?
+========================================================
+* S: R's ancestor
+* S-Plus: Commercial; modern implementation of S
+* SAS: Commercial; widely used in the commercial analytics.
+* SPSS: Commercial; easy to use; widely used in Social Science.
+* MATLAB: Commercial; can do some Stats. 
+* Python: Also can do some Stats; good in deep learning
+
+R or Python?
+=============
+R is Useful and easier to do Statistical Modeling
+Python has a great collection of libraries to do Machine learning and Deep Learning
+
+What is RStudio?
+========================================================
+* Integrated Development Environment for R
+* Nice combination of GUI and CLI
+* Free and commercial version
+* 4 main windows, tabs, etc
+* Version control: Git and VPN
+* Debugging 
+* Documentation: R Markdown
+  - install.packages("rmarkdown")
+  - http://rmarkdown.rstudio.com/
+* Presentation slides: R Presentation (this one!)
+
+
+How to Get Help
+========================================================
+* Stack Overflow: http://stackoverflow.com/questions/tagged/r
+* Cross-Validated: the statistics Q&A site http://stats.stackexchange.com/
+* Google
+
+
+[Breakout Session 2] Where to get help?
+=============
+- Find Korean websites/community that you can ask questions about R programming (5 min)
+- Suggest them in the main room (5 min)
+
+[Hands-On] Learn R's Documentation Tools 
+========================
+__R Markdown__
+
+1. Create a new R Markdown (Rmd) file
+1. 
+
+https://www.kaggle.com/WinningModelDocumentationGuidelines
+
+
+
+
+
+
 
 
 
