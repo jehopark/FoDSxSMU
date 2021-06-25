@@ -1,8 +1,14 @@
-Foundations of Data Science with Capstone
+[Foundations of Data Science with Capstone at SME, Summer 2021]
+Introduction
 ========================================================
 author: Dr. Jeho Park
 date: 
 autosize: true
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(eval = FALSE)
+```
 
 Introduction: Instructor
 ========================================================
@@ -79,9 +85,9 @@ Data science consists of the methods and tools for collecting, manipulating, and
 [Breakout Session 1] Open Discussion
 =================
 
-5 min: Discuss briefly about what the informed decisions might be in your domain/field
+- Discuss briefly about what the informed decisions might be in your domain/field (5 min)
 
-5 min: Share your team's example(s) when you come back to the main room.
+- Share your team's example(s) in the main room (5 min)
 
 Typical Data Science Project Workflow
 ===================
@@ -110,10 +116,24 @@ What is not R?
 * MATLAB: Commercial; can do some Stats. 
 * Python: Also can do some Stats; good in deep learning
 
-R or Python?
+Whic is better for Data Science? R or Python?
 =============
-R is Useful and easier to do Statistical Modeling
-Python has a great collection of libraries to do Machine learning and Deep Learning
+-- __R is Useful and easier to do Statistical Modeling and Visualization__
+
+-- __Python has a great collection of libraries to do Machine learning and Deep Learning__
+
+R Packages
+========================================================
+- R is known for its community and its huge collection of user-generated packages
+- Packages are collections of R functions, data, and compiled code in a well-defined format. The directory where packages are stored is called the library.
+- We will install the `tidyverse` package, a collection of R packages for data science
+
+```{r eval=FALSE}
+install.packages('tidyverse') # you can also use RStudio's Packages tab
+
+# You should load dplyr package first to use any functions and datasets in the package
+library(tidyverse) 
+```
 
 What is RStudio?
 ========================================================
