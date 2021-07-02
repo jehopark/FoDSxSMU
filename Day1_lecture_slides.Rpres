@@ -75,7 +75,12 @@ Text Book
 
 Introduction to Data Science
 ========================================================
+__Today's Goals__
 
+(1) Make sure everyone set the RStudio environment   
+(2) Get familiar with RStudio environment  
+(3) Create a first R markdown file  
+(4) Solve exercise problems and add solutions to a markdown (Lab session)  
 
 What is Data Science?  
 =============
@@ -118,9 +123,11 @@ What is not R?
 
 Whic is better for Data Science? R or Python?
 =============
--- __R is Useful and easier to do Statistical Modeling and Visualization__
+R is Useful and easier to do __Statistical Modeling and Visualization__
 
--- __Python has a great collection of libraries to do Machine learning and Deep Learning__
+---------
+
+Python has a great collection of libraries to do __Machine learning and Deep Learning__
 
 R Packages
 ========================================================
@@ -196,11 +203,27 @@ __R Markdown__
 1. Check this website
 https://ntaback.github.io/UofT_STA130/Rmarkdownforclassreports.html#what_is_markdown
 
+[Hands-On] First R Markdown 
+========================
+__R Markdown__ 
 
-[LAB1] R Markdown 
+Let's go over the Exercise problems in 27.2.1. and fill in the first markdown file.
+
+
+[LAB1] R Markdown Exercise 
 =================
+As a team of 2, do all the exercise problems in the sections 27.3, 27.4:
+- 27.3.1 Exercise
+- 27.4.7 Exercise
 
- 
+(1) First create a new markdown and name it "FoDS+SMU LAB1"
+
+(2) Include the exercise problems and your answers (in Korean!)
+
+(3) By the end of today, submit your exercise file (.Rmd) through the student portal.
+
+*At the end of your markdown, add one more section named "Questions" and include any questions that were not answered during the Lab session. I will try to review those questions and answer them tomorrow.*
+
 
 
 
