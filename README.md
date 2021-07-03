@@ -39,4 +39,5 @@ We will be using R for Data Science by Hadley Wickham and Garrett Grolemund. Thi
    
 - https://rstudio-education.github.io/hopr/ -- Hands-On Programming with R by Garrett Grolemund  
   
-
+## Notes
+*This course material is also work-in-progress. It will be constantly updated.*
