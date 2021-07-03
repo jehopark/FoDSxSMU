@@ -35,9 +35,8 @@ We will be using R for Data Science by Hadley Wickham and Garrett Grolemund. Thi
 
 [Reference] 
 
-1. __Foundations of Data Science by Mark Huber__  
-  https://www.markhuberdatascience.org/data-science-text
+- https://www.markhuberdatascience.org/data-science-text -- Foundations of Data Science by Mark Huber
    
-2. __Hands-On Programming with R by Garrett Grolemund__  
-  https://rstudio-education.github.io/hopr/
+- https://rstudio-education.github.io/hopr/ -- Hands-On Programming with R by Garrett Grolemund  
+  
 
