@@ -24,3 +24,20 @@ Each team will provide the following outcomes in a timely manner:
 ## Textbook
 
 We will be using R for Data Science by Hadley Wickham and Garrett Grolemund. This book is open source and can be found/downloaded online. Korean version is also available online.
+  
+[Main Text] __R for Data Science by Hadley Wickham and Garrett Grolemund__
+
+- https://r4ds.had.co.nz/ (English Version)
+
+- https://sulgik.github.io/r4ds/ (Korean Version) -- This might be outdated, so check its updates.
+  
+- https://jrnold.github.io/r4ds-exercise-solutions/ (Exercise Solutions)
+
+[Reference] 
+
+1. __Foundations of Data Science by Mark Huber__  
+  https://www.markhuberdatascience.org/data-science-text
+   
+2. __Hands-On Programming with R by Garrett Grolemund__  
+  https://rstudio-education.github.io/hopr/
+
