@@ -24,4 +24,3 @@ Each team will provide the following outcomes in a timely manner:
 ## Textbook
 
 We will be using R for Data Science by Hadley Wickham and Garrett Grolemund. This book is open source and can be found/downloaded online. Korean version is also available online.
-![image](https://user-images.githubusercontent.com/4985154/124344624-3c61a700-db88-11eb-9388-29604a120815.png)
