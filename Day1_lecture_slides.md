@@ -27,18 +27,18 @@ __After taking this course, you’ll be able to utilize the tools required to ta
 
 Course Schedule
 ========================================================
-| Day | Lecture                             | Lab                               |
-|-----|-------------------------------------|-----------------------------------|
-|   1 | Introduction                        | Setting up your R environment     |
-|   2 | Data visualization                  | Getting familiar with ggplot2     |
-|   3 | Data Wrangling (1)                  | Data visualization with real data |
-|   4 | Data wrangling (2)                  | Tidying and reshaping data        |
-|   5 | Relational Data and SQL             | SQL exercise                      |
-|   6 | Exploratory Data Analysis and Stats | EDA exercise                      |
-|   7 | Working with different data types   | Strings and Factors exercise      |
-|   8 | Programming in R                    | Dates, Times, and Functions in R  |
-|   9 | Modeling                            | Modeling and visualizing data     |
-|  10 | Advanced Methods                    | Mini project and capstone prep    |
+| Day | Title                               | Topics                                                          |
+|-----|-------------------------------------|-----------------------------------------------------------------|
+| 1   | Introduction                        | Introduction to Data Science; RStudio; R Markdown               |
+| 2   | Data Visualization (1)              | Graphical grammars (ggplot2)                                    |
+| 3   | Data Visualization (2)              | Visualization in the tidyverse; Aesthetic mappings              |
+| 4   | Data Wrangling (1)                  | R basics for data wrangling; Transforming data (dplyr); Tibbles |
+| 5   | Data Wrangling (2)                  | Tidy data; Data structures; Reshaping data                      |
+| 6   | Exploratory Data Analysis and Stats | Why EDA; Some statistics; Variation; Covariation                |
+| 7   | Working with different data types   | Vectors; Factors; Dates and Times                               |
+| 8   | Programming in R (1)                | Pipes; Functions; Iteration and vectorization                   |
+| 9   | Programming in R (2)                | Pipes; Functions; Iteration and vectorization                   |
+| 10  | Modeling                            | Regression; Linear models; Understanding residual               |
 
 Expectations
 ========================================================
