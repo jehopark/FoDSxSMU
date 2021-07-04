@@ -1,4 +1,4 @@
-[Foundations of Data Science with Capstone at SME, Summer 2021]
+[Foundations of Data Science with Capstone at SMU, Summer 2021]
 Introduction
 ========================================================
 author: Dr. Jeho Park
@@ -12,6 +12,11 @@ Introduction: Instructor
 About Me
 
 
+Introduction: TA
+========================================================
+About TA
+
+
 Introduction: Students
 ========================================================
 
@@ -19,6 +24,16 @@ Introduction: Students
 ```r
 # About YOU
 ```
+__Open your camera and mic__
+
+- Name
+- Major and Year
+- Recommend one of your favorite movies/books/TV shows/songs
+- Recommend one of your favorite restaurants around SMU
+- Your expectation from this course
+
+
+
 
 Course Goal
 ========================================================
@@ -41,7 +56,7 @@ Course Schedule
 | 10  	| Modeling                            	| Regression; Linear models; Understanding residual                                      	|
 
 Week 3 (Day 11 through 15) is dedicated to capstone project.   
-At the end of the week 3 (Day 15), we will have in-person meetings and final presentation.
+At the end of the week 3 (Day 15), we will have in-person meetings and final presentations.
 
 
 
@@ -50,15 +65,36 @@ Expectations
 1. __Our main communication language is English__  
     *You can selectively use Korean (as I can understand Korean well)*
 
+1. __Participation is the key__  
+    *Show your attention (camera, gestures, chat, voice, etc.).*
+    
 1. __Labs will be run by TAs__  
-    *Due to Time Zone issue, instructor may not be able to answer your questions during your lab session. But he will answer any questions the next day in Pacific Time*
+    *Due to Time Zone issue, instructor may not be able to answer your questions during your lab session. But he will answer any questions the next day (in Pacific Time)*
+
+1. __For the first 1 to 1.5 hours of your lab session, you will not read the exercise solutions__
+    *This is important for your learning. Do not directly refer to the solutions. You can google, look at the text book, ask questions, and discuss different approaches with your teammates. 
 
 1. __During the first 2-week study, you will need to find a capstone project__  
-    *Instructor and TAs will help you on this*
+    *Instructor and TA will help you on this*
+
+
+Course Technologies
+===================
+- Google Drive (file sharing) 
+  - Check if you can access the Google Drive Folder
+- Kakaotalk (communication)
+  - Join the 단톡방
+- GitHub (course materials) https://github.com/CMC-QCL/FoDS_SMU
+  - It is a private repo
+  - Let me know your GitHub account name to add you to the repo
+
+__How about Slack?__
 
 Course Syllabus
 ========================================================
+See if you can access this doc at
 
+[Course Syllabus](https://drive.google.com/file/d/1QRZiAJOH_GQMtAW0_3HxbOnXARoSfobQ/view?usp=sharing)
 
 Text Book
 ========================================================
@@ -92,6 +128,7 @@ Data science consists of the methods and tools for collecting, manipulating, and
 
 [Breakout Session 1] Open Discussion
 =================
+- Team up!
 
 - Discuss briefly about what the informed decisions might be in your domain/field (5 min)
 
@@ -99,11 +136,15 @@ Data science consists of the methods and tools for collecting, manipulating, and
 
 Typical Data Science Project Workflow
 ===================
-
+<br><div align="center">
+  <img src="images/data-science.png" width=800>
+</div>
 
 R and RStudio
 =============
-
+<div align="center">
+  <img src="images/rstudio-interface.png" width=1200>
+</div>
 
 What is R?
 ========================================================
@@ -183,16 +224,24 @@ How to Get Help
 [Hands-On] First R Project 
 ========================
 
-- Create a new project named "FoDSx1"
+- Create a new project named "FoDS+SMU"
 
 Documentation: R Markdown 
 ========================
+__R Markdown is our main documentation tool__
+
 - Basic Formatting
   - Global options
+  - Text formats
 - R Code Chunks
   - Code chunk options
 - R Markdown cheat sheet and quick reference
   - https://rmarkdown.rstudio.com/lesson-15.HTML
+
+R Markdown Basic Formatting
+======================
+
+Open "Basic_formatting.Rmd"
 
 
 [Hands-On] First R Markdown 
@@ -205,18 +254,20 @@ __R Markdown__
 1. Check this website
 https://ntaback.github.io/UofT_STA130/Rmarkdownforclassreports.html#what_is_markdown
 
-[Hands-On] First R Markdown 
+[Hands-On] First R Markdown (cont.)
 ========================
 __R Markdown__ 
 
-Let's go over the Exercise problems in 27.2.1. and fill in the first markdown file.
+Let's go over __Section 27.3__ Text Formatting.
+
+- Copy and paste Section 27.3 code snippet into your Rmd file
 
 
 [LAB1] R Markdown Exercise 
 =================
 As a team of 2, do all the exercise problems in the sections 27.3, 27.4:
-- 27.3.1 Exercise
-- 27.4.7 Exercise
+- 27.3.1 Exercises
+- 27.4.7 Exercises
 
 (1) First create a new markdown and name it "FoDS+SMU LAB1"
 
