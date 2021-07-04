@@ -173,11 +173,13 @@ sum(x)
 
 [Hands-On] Find the most delayed plane on average for arrivals
 ================
-1. Remove rows having NA in `dep_delay` and `arr_delay` (The results will be a data frame with no canceled flights.)
+1. Remove rows having NA in `dep_delay` and `arr_delay` (The results will be a data frame with no canceled flights.) 
 
-2. Summarise the data frame by average arrival delay (`arr_delay`), grouped by plane (`tailnum`)
+2. Save the filtered data frame as `not_canceled` 
 
-3. Find the plane (identified by it tail number) that have the highest average arrival delay and report how long it delayed its arrivals on average.
+3. Summarise the `not_canceld` data frame by average arrival delay (`arr_delay`), grouped by plane (`tailnum`)
+
+4. Find the plane (identified by it tail number) that have the highest average arrival delay and report how long it delayed its arrivals on average.
 
 Useful summary functions
 ==================
