@@ -33,13 +33,15 @@ Introduction: Students
 ```r
 # About YOU!!
 ```
-__Open your camera and mic__
+> Game Rules:  
+> - __Open your camera and mic__  
+> - __All the information you present should be different from the information of the previous people (except major and year).__
 
 - Name
 - Major and Year
 - Recommend one of your favorite movies/books/TV shows/songs
 - Recommend one of your favorite restaurants around SMU
-- Your expectation from this course
+- Your expectation(s) from this course
 
 
 
