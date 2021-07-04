@@ -1,20 +1,29 @@
 [Foundations of Data Science with Capstone at SMU, Summer 2021]
-Introduction
+Foundations of Data Science with Capstone at SMU
 ========================================================
 author: Dr. Jeho Park
-date: 
+date: July 4, 2021
 autosize: true
 
 
 
 Introduction: Instructor
 ========================================================
-About Me
+__About Me__
 
+Email: dr.jeho.park@gmail.com  
+Kakaotalk ID: jehotalk  
+LikedIn: https://www.linkedin.com/in/jehopark/  
+
+- Studied Computer Science and Applied Mathematics (Statistics)
+- Statistical modeling on parallel processing performance
+- Associate Director of Harvey Mudd College’s Scientific Computing and Research Computing, promoting CS and data analytics to non-CS people
+- Director of Claremont McKenna College's Quantitative and Computing Lab, a comprehensive support center for computing and data analysis
+- Director and Visiting Assistant Professor for Data Science Capstone Program
 
 Introduction: TA
 ========================================================
-About TA
+__About TA__
 
 
 Introduction: Students
@@ -150,9 +159,9 @@ What is R?
 ========================================================
 * R is a statistical programming language and environment.
 * R is open source/free.
-* R is widely used/preferred.
+* R is widely used.
 * R is cross-platform.
-* R is hard to learn.
+* R is hard to learn (?)
 
 What is not R?
 ========================================================
