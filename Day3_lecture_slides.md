@@ -245,7 +245,7 @@ ggplot(data = diamonds) +
 ```
 
 
-Lab3
+LAB3
 =============
 - 3.5.1: Do all the problems except #1
 - 3.6.1: Do all the problems

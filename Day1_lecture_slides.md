@@ -22,7 +22,7 @@ Introduction: Students
 
 
 ```r
-# About YOU
+# About YOU!!
 ```
 __Open your camera and mic__
 
@@ -84,9 +84,9 @@ Course Technologies
   - Check if you can access the Google Drive Folder
 - Kakaotalk (communication)
   - Join the 단톡방
-- GitHub (course materials) https://github.com/CMC-QCL/FoDS_SMU
+- GitHub (course materials) https://cmc-qcl.github.io/FoDS_SMU/ (course web page)
   - It is a private repo
-  - Let me know your GitHub account name to add you to the repo
+  - Let me know your GitHub account name to add you to the repo at https://github.com/CMC-QCL/FoDS_SMU 
 
 __How about Slack?__
 
@@ -271,9 +271,9 @@ As a team of 2, do all the exercise problems in the sections 27.3, 27.4:
 
 (1) First create a new markdown and name it "FoDS+SMU LAB1"
 
-(2) Include the exercise problems and your answers (in Korean!)
+(2) Include the exercise problems and your answers (in Korean if you prefer)
 
-(3) By the end of today, submit your exercise file (.Rmd) through the student portal.
+(3) By the end of today, drop your exercise file (.Rmd) in the course Google Drive folder (GDrive's FoDS+SMU > Day1 > Lab1).
 
 *At the end of your markdown, add one more section named "Questions" and include any questions that were not answered during the Lab session. I will try to review those questions and answer them tomorrow.*
 
