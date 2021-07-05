@@ -16,10 +16,10 @@ The Data Science Capstone is a team-based, project-based session, providing an o
 
 Students will work independently as well as collaboratively in the group for at least 5 hours a day on modeling, analysis, data manipulation/wrangling, visualization, etc. as needed for the project. At the same time, students will be guided to learn soft skills such as project management, presentation, and communication through the daily sync. Students will be expected to read necessary background articles/books, learn additional tools, and log their own work and time.
 
-Each team will provide the following outcomes in a timely manner:
-•	A project proposal detailing the intended goals, methodology, and deliverables
-•	A final presentation on the project outcomes
-•	A GitHub page containing all outcomes (README, data, codes, analyses results, etc.)
+Each team will provide the following outcomes in a timely manner:  
+•	A project proposal detailing the intended goals, methodology, and deliverables  
+•	A final presentation on the project outcomes 
+•	A GitHub page containing all outcomes (README, data, codes, analyses results, etc.) 
 
 ## Textbook
 
