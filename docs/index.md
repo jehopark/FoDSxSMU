@@ -18,7 +18,7 @@ Students will work independently as well as collaboratively in the group for at 
 
 Each team will provide the following outcomes in a timely manner:  
 •	A project proposal detailing the intended goals, methodology, and deliverables  
-•	A final presentation on the project outcomes 
+•	A final presentation on the project outcomes  
 •	A GitHub page containing all outcomes (README, data, codes, analyses results, etc.) 
 
 ## Textbook
