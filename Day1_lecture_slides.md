@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 [Foundations of Data Science with Capstone at SMU, Summer 2021]
 Foundations of Data Science with Capstone at SMU
 ========================================================
@@ -276,9 +281,9 @@ Let's go over __Section 27.3__ Text Formatting.
 
 [LAB1] R Markdown Exercise 
 =================
-As a team of 2, do all the exercise problems in the sections 27.3, 27.4:
+As a team of 2, do all the exercise problems in the sections 27.3:
 - 27.3.1 Exercises
-- 27.4.7 Exercises
+
 
 (1) First create a new markdown and name it "FoDS+SMU LAB1"
 

@@ -1,19 +1,72 @@
 [Foundations of Data Science with Capstone at SMU, Summer 2021]
 Day 2: Visualization (1)
-========================================================
+============================
 author: Dr. Jeho Park
 date: 
 autosize: true
 
 
 
-DAY1 and LAB1 Review
-========================================================
+Course Site via Canvas
+===================
 
-Any questions?
+[Online Course Site] <https://canvas.instructure.com/courses/3090373>
+
+- Announcements
+- Discussions
+- Assignments
+- Files
+- Quizzes/Surveys 
+- Mobile App (App login must use *QR Login*)
+
+__Note: We will not use Google Drive due to some deficiencies as a Learning Management System.__
+
+### Communication Channels
+- Canvas: https://canvas.instructure.com/courses/3090373
+
+*Make sure you can log in to the course site NOW*
+
+Daily Survey
+=============
+
+- Log in to Canvas from your browser
+- Open Assignments
+- Open Day1 Survey
+- Take the survey (it will  only take a few minutes)
+
+DAY1 and LAB1 Review and Q&A
+=========================
+- R and RStudio should be installed on your computer
+- RStudio's project for the course should be created
+- Make sure you have a GitHub account
+- Make sure you can render R Markdown (Rmd) file
+
+__Questions__
+
+1. I had a problem downloading the second package,(rmarkdown) from the class, and the error said that I didn't have a lib location. How can I fix this?
+
+2. Why does it always have same three code chunks set as default when I create a new markdown? Is it because I have downloaded a package?
+
+3. I wrote my date as 2021/7/5 on this document but if I knit it it appears as 2016/8/25. What is wrong?
+
 
 Today's Topics
 ==============
+- Where to get help 
+- Grammar of graphics
+- 
+
+How to Get Help
+=====================
+* Stack Overflow: http://stackoverflow.com/questions/tagged/r
+* Cross-Validated: the statistics Q&A site http://stats.stackexchange.com/
+* Google!
+
+
+[Breakout Session] Where to get help?
+=============
+- Find Korean websites/community that you can ask questions about R programming (5 min)
+- Suggest them in the main room (5 min)
 
 
 Typical Data Science Project Workflow
@@ -23,7 +76,8 @@ Typical Data Science Project Workflow
 
 Goal of First Few Days
 ====================
-__Learn fun and intuitive ways to learn data using R__
+__Learn fun and intuitive ways to use R for Data Science__
+
 
 Visualization with ggplot2: tidyverse package
 ======================
@@ -40,6 +94,7 @@ Visualization with ggplot2: a quick look
 ======================
 
 ```r
+# library(ggplot2)
 ggplot(data = mpg) + 
   aes(x = displ, y = hwy, color = class) + 
   geom_point() 
