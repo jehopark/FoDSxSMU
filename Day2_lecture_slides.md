@@ -54,7 +54,11 @@ Today's Topics
 ==============
 - Where to get help 
 - Grammar of graphics
-- 
+- Introduction to ggplot2
+- Visualization: point geom
+- Faceting
+- R Fomula
+- Discrete Variable
 
 How to Get Help
 =====================
@@ -216,9 +220,9 @@ Q: Classify the following variables as continuous or discrete:
 
 LAB2
 ==================
-3.2.4: Do all the problems
-3.3.1: Do all the problems
-3.5.1: #1
+- 3.2.4: Do all the problems
+- 3.3.1: Do all the problems
+- 3.5.1: #1
 
 
 
