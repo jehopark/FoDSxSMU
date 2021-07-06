@@ -75,7 +75,7 @@ How to Get Help
 
 Typical Data Science Project Workflow
 ===================
-
+![Workflow](./images/data-science.png)
 
 
 Goal of First Few Days
@@ -154,7 +154,7 @@ Most points on the plot form a nice linear relationship while there are some poi
 
 ```r
 ggplot(data = mpg) +  
-  geom_point(mapping = aes(x = displ, y = hwy), color = class) # create 
+  geom_point(mapping = aes(x = displ, y = hwy, color = class)) # create 
 ```
 
 
