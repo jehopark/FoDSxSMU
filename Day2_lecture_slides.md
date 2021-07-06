@@ -181,11 +181,11 @@ ggplot(data = mpg) +
 # facet_wrap(. ~ class, nrow = 2) # same result
 ```
 
->> Question: What is `~`?
+>> Question: What is `~` for?
 
 What is a R formula?
 ==================
-A formula is an R object containing a symbolic representation of a relationship between variables. Formulas are not For example, **y ~ x + a** is a *formula* which we may read "`y` varies with `x` and `a` (note that the meaning depends on the function in which the formula is used). In most modeling cases, the left-hand side of a tilde (~) is the "dependent variable" (or "response") and the right-hand side is the "independent variable" (or "predictor"). 
+A formula is an R object containing a symbolic representation of a relationship between variables. For example, **y ~ x + a** is a *formula* which we may read "`y` varies with `x` and `a` (note that the meaning depends on the function in which the formula is used). In most modeling cases, the left-hand side of a tilde (~) is the "dependent variable" (or "response") and the right-hand side is the "independent variable" (or "predictor"). 
 
 Example: In a data frame, you have a variable `t` for temperature and another variable `m` for month. Clearly, month do not vary with temperature, but temperature varies with month. So, you want to see how the temperature varies for different month. How do you write a formula for this model?
 
@@ -228,7 +228,6 @@ LAB2
 ==================
 - 3.2.4: Do all the problems
 - 3.3.1: Do all the problems
-- 3.5.1: #1
 
 
 
