@@ -21,7 +21,9 @@ output: html_document
 
 [^1]: a footnote added at the end of the page
 
-***
+***********
+
+---------
 
 2. Using the R Markdown quick reference, figure out how to:
 
@@ -31,7 +33,7 @@ Add a block quote.
 
 ***
 
-```{r setup, include = FALSE}
+```{r setup, echo = FALSE, include = FALSE}
 library(ggplot2)
 library(dplyr)
 smaller <- diamonds %>% 
