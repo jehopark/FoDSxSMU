@@ -89,7 +89,7 @@ To facet your plot on the combination of two variables, add facet_grid() to your
 ggplot(data = mpg) + 
   aes(x = displ, y = hwy) + 
   geom_point() + 
-  facet_grid(. ~ class)
+  facet_grid(drv ~ class)
 ```
 
 The differences between facet_wrap and facet_grid
@@ -170,7 +170,7 @@ Local mapping: the mappings of variables done when the geom layer is called
 ggplot(data = mpg) + 
   aes(x = displ, y = hwy) + 
   geom_point(mapping = aes(color = class)) + # use the global mapping
-  geom_smooth(data = filter(mpg, class == "subcompact"), se = FALSE) 
+  geom_smooth(data = filter(mpg, class == "subcompact"), se = TRUE) 
 ```
 
 Grammar of Graphics
@@ -206,7 +206,7 @@ Look at the following two plots and find the one that has a transformation varia
 
 ```r
 ggplot(data = diamonds) + 
-  aes(x = price, y = carat) +
+  aes(x = carat, y = price) +
   geom_point()
 ```
 
@@ -245,8 +245,8 @@ To add clarification or to show additional information on one plot, we can use p
 ```r
 ggplot(data = mpg) + 
   aes(x = displ, y = hwy) + 
-  geom_point()
-#  geom_point(position = "jitter")
+#  geom_point()
+  geom_point(position = "jitter")
 ```
 
 Visual Transformations (2) Demo
@@ -287,8 +287,8 @@ ggplot(data = diamonds) +
 LAB3
 =============
 - 3.5.1: Do all the problems except #1
-- 3.6.1: Do all the problems
+- 3.6.1: Do all the problems except #6
 - 3.7.1: These exercise problems are a bit more challenging than the previous ones. Try to understand the solutions rather than actually coding the solutions. Including these exercise is optional and will be entitled to extra credit.
-- 3.8.1: Do all the problems
+- 3.8.1: You don't have to do these problems.
 
 

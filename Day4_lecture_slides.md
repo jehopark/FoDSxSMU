@@ -7,10 +7,22 @@ autosize: true
 
 
 
-DAY3 and LAB3 Review
+LAB3 Exercises
 ========================================================
 
-Any questions?
+__Before we move on to learn data wrangling methods, please take Day 2 quiz and Day 3 quiz now.__
+
+__Let's do a couple of Lab3 exercises__
+
+Git Setup
+==========
+__We will be using RStudio's Git/GitHub feature__
+
+(1) Download and install git on your computer: https://git-scm.com/downloads  
+(2) Restart RStudio   
+(3) Go to your preference and check if RStudio has the git installation information.  
+(4) Create a new project with a GitHub repo attached to it. (Follow instructions)
+
 
 Today's Topics
 ==============
@@ -18,7 +30,8 @@ Today's Topics
 ### Basic R Objects
 ### Working with Data: Built-in Data, Data Import, Data Exploration
 ### R Notebook
-### Data Transformation with `dplyr`
+### Data Transformation with `dplyr`: filter
+### R's Logical Operators
 
 What Can We Do with R? Math (of course!)
 ========================================================
