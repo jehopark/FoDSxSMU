@@ -26,12 +26,15 @@ __We will be using RStudio's Git/GitHub feature__
 
 Today's Topics
 ==============
-### Basic R Information
-### Basic R Objects
-### Working with Data: Built-in Data, Data Import, Data Exploration
-### R Notebook
-### Data Transformation with `dplyr`: filter
-### R's Logical Operators
+- Basic R Information
+- Basic R Objects
+- Working with Data:  
+  - Built-in Data,  
+  - Data Import, 
+  - Data Exploration
+- R Notebook
+- Data Transformation with `dplyr`: filter
+- R's Logical Operators
 
 What Can We Do with R? Math (of course!)
 ========================================================
