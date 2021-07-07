@@ -189,41 +189,6 @@ A formula is an R object containing a symbolic representation of a relationship 
 
 Example: In a data frame, you have a variable `t` for temperature and another variable `m` for month. Clearly, month do not vary with temperature, but temperature varies with month. So, you want to see how the temperature varies for different month. How do you write a formula for this model?
 
-What is a discrete variable?
-===================
-![Variable Types](./images/variable-types.png)
-
-Source: https://statsandr.com/blog/variable-types-and-examples/
-
-What is a discrete variable?
-===================
-
->> Quantitative *discrete* variables are numeric variables for which the values it can take are __countable__ and have a __finite number of possibilities__. The values are usually, but not always, integers. For example:
-
->> - Number of children per family
->> - Number of students in a class
->> - Number of citizens of a country
-
-Then, what is a continuous variable?
-===================
->> Quantitative *continuous* variables are numerical measurements whose values are __not countable__ and have an __infinite number of possibilities__. For example:
-
->> - Age
->> - Weight
->> - Height
-
-Q: Classify the following variables as continuous or discrete:
-===============================================
-(1) Temperature in Asan  
-
-(2) The number of sales made in a week  
-
-(3) Time taken to run a 100-meter dash   
-
-(4) The quantity of fat in samgyupsal  
-
-(5) The number of trout in Sinjungho  
-
 LAB2
 ==================
 - 3.2.4: Do all the problems

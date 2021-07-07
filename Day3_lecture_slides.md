@@ -14,11 +14,13 @@ Any questions?
 
 Today's Topics
 ==============
+- Faceting by one variable
 - Types of variables (in stats)
 - Faceting by two variables
 - Geometric Objects
 - Mapping scope: Global vs. Local
-- 
+- Statistical Transformations
+- Visual Transformations
 
 Faceting by a single variable
 =========
@@ -112,7 +114,7 @@ For example:
 
 >> There are over 40 geoms in ggplot2 package.
 
-Geometric Objects (geom)
+Geometric Objects (geom): Where to put aesthetic mapping?
 =======================
 
 ```r
@@ -130,7 +132,24 @@ ggplot(data = mpg) +
 
 
 ```r
+# We can display multiple geoms in one plot
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) +
+  geom_smooth(mapping = aes(x = displ, y = hwy))
+```
+
+Geometric Objects (geom): Where to put aesthetic mapping?
+=======================
+
+```r
 # Using multiple geoms
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point() + 
+  geom_smooth() 
+```
+
+
+```r
 ggplot(data = mpg) + 
   aes(x = displ, y = hwy) + 
   geom_point() + # Add mapping = aes(color = class) and see the difference
@@ -146,13 +165,23 @@ Local mapping: the mappings of variables done when the geom layer is called
 
 
 ```r
-library(dplyr) # to use `filter` function below
+# library(dplyr) # to use `filter` function below
 
 ggplot(data = mpg) + 
   aes(x = displ, y = hwy) + 
   geom_point(mapping = aes(color = class)) + # use the global mapping
   geom_smooth(data = filter(mpg, class == "subcompact"), se = FALSE) 
 ```
+
+Grammar of Graphics
+=====================
+Defines a plot as the combination of
+
+1. __Data__
+2. __Aesthetic Mapping__
+3. __Geometric Object (representation)__
+4. Statistical Transformation
+5. Position Adjustment
 
 Statistical Transformations (1) | Breakout Session
 ==================
@@ -195,6 +224,16 @@ Statistical Transformations (3)
 >- smoothers fit a model to your data and then plot predictions from the model.
 
 >- boxplots compute a robust summary of the distribution and then display a specially formatted box.
+
+Statistical Transformations (4): Boxplots
+==================
+
+```r
+ggplot(data = mpg, mapping = aes(x = class, y = hwy)) + 
+  geom_boxplot()
+```
+
+![Boxplot](images/boxplot.png)
 
 Visual Transformations (= Position Adjustments)
 ================
