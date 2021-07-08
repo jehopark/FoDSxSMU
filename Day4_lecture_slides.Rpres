@@ -128,11 +128,11 @@ class(a)
 ```{r, eval=FALSE}
 class(A)
 ```{r, eval=FALSE}
-B <- c(a,A) # concatenation
+b <- c(a,A) # concatenation
 ```{r, eval=FALSE}
-print(B)
+print(b)
 ```{r, eval=FALSE}
-class(B) # why?
+class(b) # why?
 ```
 
 Basic R Objects: Vectors (cont.)
@@ -185,7 +185,7 @@ R Objects: Factor
 * Factors have 'levels' attribute. They may be nominal or ordinal.
 * Remember the types of variables from Day 2? Factors are the R's implementation of quantitative variables.
 ```{r, eval=FALSE}
-v <- c("a","b","c","c","b")
+v <- c("a","b","c","c","b","d","f")
 x <- factor(v) # turn the character vector into a factor object
 z <- factor(v, ordered = TRUE) # ordered factor
 x
@@ -264,132 +264,16 @@ Follow the instructor and import "auto.csv" file!
 
 Click-click-click-done!
 
-Check if you have *auto* in your Environment.
+Check if you have *Births2015* in your Environment.
 
-[Hands-on] Data Exploration - Head or Tail?
+[Lab4] Data Exploration - Head or Tail?
 ========================================================
 When you have a large dataset, it's impossible and inconvenient to display the whole contents of the dataset on the screen. You will want to check the first few rows or the last few rows of the dataset. 
 
-In this exercise, you will create a Code Chunk in a new Notebook and do the following:
-(1) Import "auto.csv" as auto_data
-(2) Output the first row of auto_data using R's built-in function
-(3) Output the last row of auto_data using R's built-in function
-
-What is a R Notebook and What is the difference to R Markdown?
-===================
-__A R Markdown is a type of text file whose file extention is `Rmd`__
-
-- When `knittr` renders (knits) the Rmd file, it generates an output file in either HTML, PDF, or Word format.
-
-- It is the same concept as an HTML file. An HTML file is a text file containing HTML tags. When your browser renders the HTML file, it generates a web page.
-
-__A R Notebook is a special (and convenient) way to work with R Markdown files.__
-
-- One can "preview" a R Markdown file without running (evaluating) all the code chunks. 
-
-- From the R Notebook editor window, you can selectively run code chunks for checking. 
-
-- When you *preview* a R Notebook, it only includes the outputs that were already run in the editor mode.
-
-- It is convenient when you have a long Markdown file.
-
-Data Transformation
-====================
-```{r}
-library(nycflights13)
-library(tidyverse)
-```
-
-If you don't have the `nycflights13` package, install it.
-
-Try `?nycflights13` to find out the details of the dataset.
-
-In the next sections, we will be using functions from `dplyr` package.
-
-Data Transformation: dplyr::filter()
-=============
-Let's create a new data frame, `jan1`, containing only the flights on January 1st.
-
-```{r}
-jan1 <- filter(flights, month == 1, day == 1)
-```
-
-Notice assignment operator (<-) and comparison operator (==)
-
-Comparison and Logical Operators in R
-=================================
-
-Comparison Operators
-
-| Operator | Description              |
-|----------|--------------------------|
-| <        | Less than                |
-| >        | Greater than             |
-| <=       | Less than or equal to    |
-| >=       | Greater than or equal to |
-| ==       | Equal to                 |
-| !=       | Not equal to             |
-
-------------------
-Logical Operators
-
-| Operator | Description              |
-|----------|--------------------------|
-| !        | Logical NOT              |
-| &        | Element-wise logical AND |
-| &&       | Logical AND              |
-|          | Element-wise logical OR  |
-|          | Logical OR               |
-| xor(x,y) | Exclusive OR             |
-
-TRUE or FALSE
-===============
-```{r eval=F}
-# Logical Operators in R
-5 < 2
-(5 < 2) & (3 > 2)
-(5 < 2) | (3 > 2)
-5 %in% c(1,2,3,4,5)
-is.na(c(1,2,NA,4,5))
-```
-
-```{r}
-# vectorized (element-wise) operator
-x <- c(TRUE, FALSE, FALSE)
-y <- c(TRUE, TRUE, FALSE)
-x & y   # returns a logical vector
-x && y  # returns a Boolean value
-```
-
-Boolean Operators
-=================
-
-![Boolean](./images/transform-logical.png)
-
-[Hands-On] Filter and Logical Operators
-==============
-
-1. Find all flights that departed in November or December.
-
-1. Find all flights that weren’t delayed (on arrival or departure) by more than two hours
-
-Missing Values and Comparison/Logical Operations
-========================
-It is important to remember that the results of any operations on rows with `NA` values will be unknown (NA) as well.
-
-```{r}
-NA > 5
-#> [1] NA
-10 == NA
-#> [1] NA
-NA + 10
-#> [1] NA
-NA / 2
-#> [1] NA
-```
+In this exercise, you will create a Code Chunk in a new Notebook and do the following:  
+(1) Import "Births2015.csv" as Births2015  
+(2) Output the first row of Births2015 using R's built-in function  
+(3) Output the last row of Births2015 using R's built-in function  
 
 
-LAB4
-=============
-- 5.2.4: Do all the problems
 
