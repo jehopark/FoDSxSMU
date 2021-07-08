@@ -18,10 +18,15 @@ Git Setup
 ==========
 __We will be using RStudio's Git/GitHub feature__
 
+Instructor RStudio -------------------------------------------------> Student RStudio
+
+Instructor RStudio --- push --> [GitHub Repo] --- pull --> Student RStudio
+
 (1) Download and install git on your computer: https://git-scm.com/downloads  
 (2) Restart RStudio   
 (3) Go to your preference and check if RStudio has the git installation information.  
 (4) Create a new project with a GitHub repo attached to it. (Follow instructions)
+
 
 
 Today's Topics
@@ -242,6 +247,17 @@ _4wheelDrive
 
 Four.Wheel.Drive  
 ```
+What is Data Wrangling?
+======================================
+
+Source: Wrangling Wild Horses in the Mountains of Montana (Director: Kristopher Rey-Talley) | Short Film Showcase | National Geographic Channel on Youtube (https://youtu.be/vkBtEe-lieU?t=131) | clip from 2:11 to 3:11
+
+What is Data Wrangling?
+=============================================
+Data wrangling is the process of obtaining, cleaning, reshaping and transforming raw (and messy) data into a usable form of processed (and tidy) data.
+
+![Data Wrangling](./data-wrangling-figure/Data_Wrangling_with_R.png)  
+Source: "Data Wrangling with R" by Bradley C. Boehmke | Use R! Series
 
 Working with Data
 ========================================================
