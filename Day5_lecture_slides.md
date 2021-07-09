@@ -10,22 +10,132 @@ autosize: true
 DAY4 and LAB4 Review
 ========================================================
 
+- Day4 Quiz
+
 Any questions?
+
+
 
 Today's Topics
 ==============
 ## Data Transformation: 
-### - Arrange rows
-### - Select coloumns
-### - Mutate data frame to create new variables
-### - Summarise data frame 
-### - Group by data frame by variable(s)
+- Pick observations by their values (filter()).
+- Reorder the rows (arrange()).
+- Pick variables by their names (select()).
+- Create new variables with functions of existing variables (mutate()).
+- Collapse many values down to a single summary (summarise()).
+- Group by group operations (group_by())
   
   
-## Useful Stuff for Data Transformation:
-### - Piping, Missing values, Summary functions
+## Essentials for Data Transformation:
+- Boolean Operator in R
+- Piping, Missing values, Summary functions
 
-Data Transformation: dplyr::arrange()
+
+Data Transformation
+====================
+Let's use nycflights dataset for our examples and hands-on practice.
+
+If you don't have the `nycflights13` package, install it.
+
+
+```r
+library(nycflights13)
+library(tidyverse)
+```
+
+Try `?nycflights13` to find out the details of the dataset.
+
+In the next sections, we will learn data manipulation functions from `dplyr` package.
+
+Data Transformation: Filter rows with filter()
+=============
+Let's create a new data frame, `jan1`, containing only the flights on January 1st.
+
+
+```r
+jan1 <- filter(flights, month == 1, day == 1)
+```
+
+Notice assignment operator (<-) and comparison operator (==)
+
+Comparison and Logical Operators in R
+=================================
+
+Comparison Operators
+
+| Operator | Description              |
+|----------|--------------------------|
+| <        | Less than                |
+| >        | Greater than             |
+| <=       | Less than or equal to    |
+| >=       | Greater than or equal to |
+| ==       | Equal to                 |
+| !=       | Not equal to             |
+
+------------------
+Logical Operators
+
+| Operator | Description              |
+|----------|--------------------------|
+| !        | Logical NOT              |
+| &        | Element-wise logical AND |
+| &&       | Logical AND              |
+|          | Element-wise logical OR  |
+|          | Logical OR               |
+| xor(x,y) | Exclusive OR             |
+
+TRUE or FALSE
+===============
+
+```r
+# Logical Operators in R
+5 < 2
+(5 < 2) & (3 > 2)
+(5 < 2) | (3 > 2)
+5 %in% c(1,2,3,4,5)
+is.na(c(1,2,NA,4,5))
+```
+
+
+```r
+# vectorized (element-wise) operator
+x <- c(TRUE, FALSE, FALSE)
+y <- c(TRUE, TRUE, FALSE)
+x & y   # returns a logical vector
+x && y  # returns a Boolean value
+```
+
+Boolean Operators
+=================
+
+![Boolean](./images/transform-logical.png)
+
+[Hands-On] Filter and Logical Operators
+==============
+
+1. Find all flights that departed in November or December.
+
+1. Find all flights that weren’t delayed (on arrival or departure) by more than two hours
+
+Missing Values and Comparison/Logical Operations
+========================
+It is important to remember that the results of any operations on rows with `NA` values will be unknown (NA) as well.
+
+
+```r
+NA > 5
+#> [1] NA
+10 == NA
+#> [1] NA
+NA + 10
+#> [1] NA
+NA / 2
+#> [1] NA
+```
+
+
+Data Transformation: Arrange rows with arrange()
 ==================
 __`arrange` sorts observations (rows) by a variable (column) in ascending order__
 
@@ -41,7 +151,7 @@ arrange(flights, year, month, day)
 
 1. Which flights travelled the farthest? Which travelled the shortest?
 
-Data Transformation: dplyr::select()
+Data Transformation: Select columns with select()
 ==================
 __`select` extract_ (subsets) only the variables (columns) that you choose__
 
@@ -116,7 +226,7 @@ When not to use pipes
 
 
 
-Data Transformation: dplyr::mutate()
+Data Transformation: Add new variables with mutate()
 ==================
 __`mutate` creates new variables based on some calculations using other variables__  
 __The newly created variables (columns) are added to the end of the data frame.__
@@ -140,7 +250,7 @@ starwars_mass2 <-
 starwars_mass2
 ```
 
-Data Transformation: dplyr::summarise and dplyr::group_by
+Data Transformation: Grouped summaries with summarise() and group_by()
 =======================
 __`summarise` applies a summary function (e.g., mean, sum, etc.) and returns a result.__   
 
@@ -214,9 +324,10 @@ __Measures of Rank__
 
 
 LAB5
-============
+=============
+- 5.2.4: #1
 - 5.3.1 #1, #3
-- 5.4.1 #2, #3, #4
-- 5.5.2 
-- 5.6.7
+- 5.4.1 #2, #3
+- 5.5.2 #5
+- 5.6.7 #5
 
