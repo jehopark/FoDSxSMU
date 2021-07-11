@@ -81,8 +81,8 @@ Logical Operators
 | !        | Logical NOT              |
 | &        | Element-wise logical AND |
 | &&       | Logical AND              |
-|          | Element-wise logical OR  |
-|          | Logical OR               |
+| |         | Element-wise logical OR  |
+| ||         | Logical OR               |
 | xor(x,y) | Exclusive OR             |
 
 TRUE or FALSE
@@ -141,7 +141,7 @@ __`arrange` sorts observations (rows) by a variable (column) in ascending order_
 
 
 ```r
-arrange(flights, year, month, day)
+temp <- arrange(flights, year, month, day)
 ```
 
 [Hands-on] Arrange and find
@@ -149,7 +149,7 @@ arrange(flights, year, month, day)
 
 1. Sort `flights` to find the most delayed flights. Find the flights that left earliest.
 
-1. Which flights travelled the farthest? Which travelled the shortest?
+1. Which flights traveled the farthest? Which traveled the shortest?
 
 Data Transformation: Select columns with select()
 ==================
@@ -269,7 +269,7 @@ The following R code generates a data frame, `daily_dep_delay`, containing avera
 daily_dep_delay <- 
   flights %>% 
   group_by(year, month, day) %>% 
-  summarise(delay = mean(dep_delay))
+  summarise(delay = mean(dep_delay, na.rm = TRUE))
 daily_dep_delay # Any issue?
 ```
 
