@@ -2,7 +2,7 @@
 Day 6: Exploratory Data Analysis (EDA)
 ========================================================
 author: Dr. Jeho Park
-date: 
+date: 07/12/2021
 autosize: true
 
 ```{r setup, include=FALSE}
@@ -15,10 +15,10 @@ library(grid)
 
 Today's Topic
 ==========
-- Exploratory Data Analysis (EDA) Cycle
+- Exploratory Data Analysis (EDA) 
 - EDA using Distributions of Data: clustering values, finding unusual values, zoom-in, etc,
 - How to deal with unusual values
-- EDA using Covariation of two variables: scatter plot, boxplot, and densoty plot.
+- EDA using Covariation of two variables: histogram/density plot, scatter plot, boxplot, and tile/heat map
 
 EDA (탐색적 데이터 분석 방법) Cycle 
 =======
@@ -34,7 +34,7 @@ __Your goal during EDA is to develop an understanding of your data__
 (3) Use what you learn to refine your questions and/or generate new questions 
 
 
-Explore Variation of Data
+Explore Variation of Data (데이터 변화/변동 분석)
 ============
 
 - Visualize distribution
@@ -44,15 +44,28 @@ Explore Variation of Data
 Distributions of Data (데이터의 분포를 통한 분석)
 ===============
 - Distribution of Discrete Variable
+
+![Bar plot](images/bar-plot.png)
+
+-----
+
+- Distribution of Continous Variable
+
+![Histogram](images/histogram.png)
+
+Distributions of Data (데이터의 분포를 통한 분석)
+===============
+- Distribution of Discrete Variable
 ```{r}
 ggplot(data = diamonds) +
-  geom_bar(mapping = aes(x = cut))
+  geom_<FILL_IN>(mapping = aes(x = cut))
 ```
+>> A barplot with one variable counts the number of observations in each group and displays the count as the height of a bar for each group
 
 - Distribution of Continuous Variable
 ```{r}
 ggplot(data = diamonds) +
-  geom_histogram(mapping = aes(x = carat)) # Try different bins or binwidth to see different patterns
+  geom_<FILL_IN>(mapping = aes(x = carat)) # Try different bins or binwidth to see different patterns
 ```
 
 >> A histogram divides the x-axis into equally spaced bins and then uses the height of a bar to display the number of observations that fall in each bin.
@@ -132,12 +145,13 @@ ggplot(diamonds) +
 
 [Hands-On] Find the outliers
 ==================
-From the previous example, we found that there are a small number of diamonds whose width is 0, ~30, and ~60. In this hands-on, find the outliers and look at the price or other variables to confirm if they might be errors or special diamonds.
+From the previous example, we found that there are a small number of diamonds whose width is 0, ~30, and ~60. In this hands-on, we find the outliers and look at the price or other variables to confirm if they might be errors or special diamonds.
 
 ```{r}
+# replace proper arguments with <FILL-IN>
 diamonds %>% 
-  filter(<FILL-IN>) %>% # replace proper arguments with <FILL-IN>
-  select(<FILL-IN>) %>% # replace proper arguments with <FILL-IN>
+  filter(<FILL-IN>) %>% # filter diamonds by y values less than 3 or greater than 30 
+  select(price, carat, x, y, z) %>% 
   arrange(y)
 ```
 
@@ -148,13 +162,19 @@ So, what is your conclusion? Are the outliers good values or bad values?
 ==================
 __What happens if we remove those outliers from diamonds dataset?__
 
-==> It will drop entire row and affect statistics of other variables.
+==> It will drop entire row and affect statistics of other variables. Its impact would be very high if there are many NA's in one variable.
 
-__To have other variables intact, we want to replace the questionable or unusual values with NA__
+__To keep all the observations, we just want to replace the questionable or unusual values with NA__
 
 HOW?
 
 Use `base::ifesle()` or `dplyr::replace()`
+
+Replacing unusual values with NA's
+==================
+
+`ifelse(<CONDITION>, <IF_TRUE_DO_THIS>, <ELSE_DO_THIS>)`
+
 
 ```{r}
 diamonds2 <-
@@ -162,6 +182,8 @@ diamonds2 <-
     mutate(y = ifelse(y < 2 | y > 30, NA, y)) %>% 
     arrange(y)
 ```
+
+`replace(<VAR>, <CONDITION>, <IF_TRUE_REPLACE_VAR_With_THIS>)`
 
 ```{r}
 diamonds3 <-
@@ -171,14 +193,14 @@ diamonds3 <-
 ```
 
 Covariation of two variables
-===========
-__There are several ways to check the relationship of two variables __
+=============
+__There are several ways to check the relationship between two variables__
 
 - Scatter plot
 - Boxplot
 - Overlaid Density Plot
 
-Depending on the variable types
+Checking Relationship Depending on the Variable Types
 =======================
 
 (1) Categorical vs Continuous  
@@ -271,6 +293,14 @@ And then, plot `births` vs. `date` on a scatter plot
 ggplot(data = Births2015) +
   aes(date, births) +
   geom_point()
+```
+
+Do you see any pattern? Can you identify which day of a week that show low number of births?
+```{r}
+# Boxplot showing births on each day of a week
+ggplot(data = Births2015) +
+  aes(x = wday, y = births) +
+  geom_<FILL_IN>
 ```
 
 
