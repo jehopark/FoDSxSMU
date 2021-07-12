@@ -295,7 +295,7 @@ ggplot(data = Births2015) +
   geom_point()
 ```
 
-Do you see any pattern? Can you identify which day of a week that show low number of births?
+Do you see any pattern? Can you identify which day of a week showing low number of births?
 ```{r}
 # Boxplot showing births on each day of a week
 ggplot(data = Births2015) +
