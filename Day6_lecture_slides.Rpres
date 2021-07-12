@@ -59,6 +59,7 @@ Distributions of Data (데이터의 분포를 통한 분석)
 ```{r}
 ggplot(data = diamonds) +
   geom_bar(mapping = aes(x = cut))
+#  geom_histogram(aes(x = cut))
 ```
 >> A barplot with one variable counts the number of observations in each group and displays the count as the height of a bar for each group
 
@@ -367,8 +368,8 @@ Lab6
 ==========
 Exercise 7.4.1: #1, #2
 
-Exercise 7.5.1.1: #2, #4, $6
+Exercise 7.5.1.1: #2, #4, #6
 
-Exercise 7.5.1.2: #1 (Hint: calculate a new variable which is the proportion of each cut within a color)
+Exercise 7.5.2.1: #1 (Hint: calculate a new variable which is the proportion of each cut within a color)
 
-Exercise 7.5.1.3: #2 (Hint: divide the `price` variable into 10 groups or bins, and then apply geom_boxplot.)
+Exercise 7.5.3.1: #2 (Hint: divide the `price` variable into 10 groups or bins, and then apply geom_boxplot.)
