@@ -43,7 +43,7 @@ Distributions of Data (데이터의 분포를 통한 분석)
 
 -----
 
-- Distribution of Continous Variable
+- Distribution of Continuous Variable
 
 ![Histogram](images/histogram.png)
 
@@ -53,7 +53,7 @@ Distributions of Data (데이터의 분포를 통한 분석)
 
 ```r
 ggplot(data = diamonds) +
-  geom_<FILL_IN>(mapping = aes(x = cut))
+  geom_bar(mapping = aes(x = cut))
 ```
 >> A barplot with one variable counts the number of observations in each group and displays the count as the height of a bar for each group
 
@@ -61,7 +61,7 @@ ggplot(data = diamonds) +
 
 ```r
 ggplot(data = diamonds) +
-  geom_<FILL_IN>(mapping = aes(x = carat)) # Try different bins or binwidth to see different patterns
+  geom_histogram(mapping = aes(x = carat), binwidth = 0.5) # Try different bins or binwidth to see different patterns
 ```
 
 >> A histogram divides the x-axis into equally spaced bins and then uses the height of a bar to display the number of observations that fall in each bin.
@@ -78,6 +78,11 @@ In this hands-on exercise, do the following:
 
 ```r
 small_dia <-
+  diamonds %>% 
+    filter(carat < 3)
+
+ggplot(data = small_dia) +
+  geom_histogram(mapping = aes(x = carat), binwidth = 0.1)
 # fill-in
 ```
 
@@ -87,7 +92,10 @@ Challenge:
 
 
 ```r
-diamonds %>% 
+small_dia %>% 
+  count(cut_width(carat, 0.1)) %>% 
+  arrange(desc(n))
+  
 # Hint: count() and cut_width()
 ```
 
@@ -153,8 +161,8 @@ From the previous example, we found that there are a small number of diamonds wh
 ```r
 # replace proper arguments with <FILL-IN>
 diamonds %>% 
-  filter(<FILL-IN>) %>% # filter diamonds by y values less than 3 or greater than 30 
-  select(price, carat, x, y, z) %>% 
+  filter(y < 2 | y > 30) %>% # filter diamonds by y values less than 3 or greater than 30 
+#  select(price, carat, x, y, z) %>% 
   arrange(y)
 ```
 
@@ -304,7 +312,7 @@ And then, plot `births` vs. `date` on a scatter plot
 ```r
 ggplot(data = Births2015) +
   aes(date, births) +
-  geom_point()
+  geom_point(aes(color = wday))
 ```
 
 Do you see any pattern? Can you identify which day of a week showing low number of births?
@@ -313,7 +321,7 @@ Do you see any pattern? Can you identify which day of a week showing low number 
 # Boxplot showing births on each day of a week
 ggplot(data = Births2015) +
   aes(x = wday, y = births) +
-  geom_<FILL_IN>
+  geom_boxplot()
 ```
 
 
@@ -323,8 +331,9 @@ To visualize the covariation between two categorical variables, you’ll need to
 
 
 ```r
-ggplot(data = mpg) +
-  geom_count(mapping = aes(x = drv, y = class))
+ggplot(data = mpg, mapping = aes(x = drv, y = class) ) +
+  geom_count()
+#  geom_point()
 ```
 
 
@@ -355,7 +364,7 @@ ggplot(data = diamonds) +
 It is less effective if there are many overlapping points. In this case, we can use the heat map (tile) approach.
 
 ```r
-ggplot(data = smaller) +
+ggplot(data = small_dia) +
   geom_bin2d(mapping = aes(x = carat, y = price))
 ```
 
@@ -364,7 +373,7 @@ There is another, even more visually attractive, heat map approach for continous
 
 ```r
 # install.packages("hexbin")
-ggplot(data = smaller) +
+ggplot(data = small_dia) +
   geom_hex(mapping = aes(x = carat, y = price))
 ```
 
