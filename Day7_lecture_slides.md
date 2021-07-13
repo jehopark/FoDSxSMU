@@ -10,6 +10,8 @@ autosize: true
 DAY6 and LAB6 Review
 ========================================================
 
+Day6 Quiz
+
 Any questions?
 
 
