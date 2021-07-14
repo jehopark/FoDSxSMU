@@ -2,7 +2,7 @@
 Day 7: Working with Different Data Types
 ========================================================
 author: Dr. Jeho Park
-date: 
+date: 07/13/2021
 autosize: true
 
 
@@ -86,7 +86,7 @@ __Use `locale`__
 ```r
 parse_number("1,234.56")
 
-parse_number("1.234,56") # Not what we want! How can we solve this issue?
+parse_number("1.234,56", locale = locale(decimal_mark = ",")) # Not what we want! How can we solve this issue?
 ```
 
 Try `?locale` and `default_locale()` from your console. Which arguments are the number related arguments?
@@ -99,7 +99,7 @@ __Use `parse_number()`__
 
 
 ```r
-parse_number("$100")
+parse_number("$100.25")
 
 parse_number("20%")
 
@@ -173,7 +173,9 @@ The cases for s1 and s3 do not mean that the strings were broken or error. You n
 ```r
 parse_character(s1, locale = locale(encoding = "Latin1"))
 
-parse_character(x2, locale = locale(encoding = "Shift-JIS"))
+parse_character(s3, locale = locale(encoding = "Shift-JIS"))
+
+parse_character(s2, locale = locale(encoding = "UTF-8"))
 ```
 
 
@@ -277,7 +279,7 @@ tail(challenge)
 
 Writing to a File
 =============
-When you write your well parsed data using custom options to a CSV file, don't forget that the information is longer preserved. 
+When you write your well parsed data using custom options to a CSV file, don't forget that the information is no longer preserved. 
 
 This means that when you read the CSV file back, you have to specify how to read each column again in your script.
 
@@ -316,7 +318,7 @@ Printing (console output)
 ```r
 class(nycflights13::flights) # tibble
 nycflights13::flights %>% 
-#  print(n = 10)
+# print(n = 10)
  print(n = 10, width = Inf) 
 ```
 
@@ -344,70 +346,11 @@ iris_tibble %>%
   .$Species
 ```
 
-Tidy Data (1)
-============
-The number of TB cases documented by the World Health Organization in Afghanistan, Brazil, and China between 1999 and 2000. 
-
-
-```r
-table1
-table2
-table3
-table4a
-table4b
-```
-
-Tidy Data Rules
-==========
-There are three interrelated rules which make a dataset tidy:
-
-- Each variable must have its own column. (변수마다 해당되는 열이 있어야 한다.)
-
-- Each observation must have its own row. (관측마다 해당되는 행이 있어야 한다.)
-
-- Each value must have its own cell. (값마다 해당하는 하나의 셀이 있어야 한다.)
-
-![Tidy Data](images/tidy-1.png)
-
-Why Tidy Data is Better and Recommended?
-==============
-
-1. There’s a general advantage to picking one consistent way of storing data. (일관된 데이터 구조를 사용할 때의 장점이 있음)
-
-2. There’s a specific advantage to placing variables in columns because it allows R’s vectorised nature to shine. (변수가 열에 배치될때 R의 벡터화된 계산을 하기가 용이해 진다.)
-
-
-Examples of Easy Tidy Data Manipulations
-===========
-
-
-```r
-table1 %>% 
-  mutate(rate = cases / population * 10000)
-```
-
-
-
-```r
-# Compute cases per year
-table1 %>% 
-  count(year, wt = cases)
-```
-
-
-```r
-# Visualise changes over time
-library(ggplot2)
-ggplot(table1, aes(year, cases)) + 
-  geom_line(aes(group = country), colour = "grey50") + 
-  geom_point(aes(colour = country))
-```
-
 Lab7
 ===========
 Exercise 11.2.2: Do all the problems except #3
 
-Exercise 11.3.5: #4, #4   
+Exercise 11.3.5: #4, #7   
 
 
 

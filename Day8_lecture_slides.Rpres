@@ -15,7 +15,7 @@ DAY7 and LAB7 Review
 
 Day7 Quiz
 
-Lab7 solution
+Lab7 solution 
 
 Any Questions?
 
@@ -314,6 +314,20 @@ ggplot(relig_summary, aes(tvhours, fct_reorder(relig, tvhours))) +
 
 `fct_reorder` takes two arguments: (1) the factor you want to reorder and (2) a numeric vector you want to use as the value for reordering. 
 
+A classic way to ordering factors
+=============
+__Use `ordered()` function__
+
+```{r}
+Births2015 <- read_csv("Births2015.csv")
+# Births2015$wday <- ordered(Births2015$wday, levels = c("Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"))
+ggplot(data = Births2015) +
+  #  geom_point() +
+  geom_boxplot(aes(x = wday, y = births))
+
+```
+
+
 Modifying factor levels
 ===================
 Sometime, you want to simplify the levels of factors. Let's see the count of `partyid` from the `gss_cat` tibble.
@@ -335,6 +349,10 @@ gss_cat %>%
   count(partyid)
 ```
 
+Homework
+========
+14.3 Matching patterns with regular expressions
+14.4 Tools
 
 Lab8
 ========
