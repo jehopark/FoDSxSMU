@@ -8,6 +8,7 @@ autosize: true
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_chunk$set(eval = FALSE)
+library(tidyverse)
 ```
 
 DAY7 and LAB7 Review
@@ -46,7 +47,7 @@ There are three interrelated rules which make a dataset tidy:
 
 - Each variable must have its own column. (변수마다 자신의 열이 있어야 한다.)
 
-- Each observation must have its own row. (관측마다 자신의 행이 있어야 한다.)
+- Each observation must have its own row. (관측객체마다 자신의 행이 있어야 한다.)
 
 - Each value must have its own cell. (관측값마다 자신의 쎌이 있어야 한다.)
 
@@ -76,7 +77,7 @@ Calculate `z`, an element-wise sum of x and y, using a `for` loop:
 ```{r}
 z <- 0 # initialize z
 for (i in 1:4) {
-  z[i] = x[i] + y[i]
+  z[i] = x[i] + y[i] # z[3] = x[3] + y[3] 
 }
 z
 ```
@@ -84,8 +85,8 @@ z
 Do the same thing using R's vectorized operation:
 
 ```{r}
-<FILL_IN> # vectorized operation
-z
+z1 <- x + y # vectorized operation
+z1
 ```
 
 
@@ -95,7 +96,7 @@ Examples of Easy Tidy Data Manipulations
 
 ```{r}
 table1 %>% 
-  mutate(rate = cases / population * 10000)
+  mutate(rate = cases / population * 10000) 
 ```
 
 
@@ -107,7 +108,7 @@ table1 %>%
 
 ```{r}
 # Visualise changes over time
-library(ggplot2)
+# library(ggplot2)
 ggplot(table1, aes(year, cases)) + 
   geom_line(aes(group = country), colour = "grey50") + 
   geom_point(aes(colour = country))
@@ -138,10 +139,10 @@ Let's look at the `table4a`:
 table4a
 ```
 
-(1) Find the column names that are values
-(2) Come up with a column name to hold the values used as column names 
-(3) Name a new column to move the observation values under. 
-(4) Use pivot_longer to rearrange the columns and row values.
+(1) Find the column names that are values  
+(2) Come up with a column name to hold the values used as column names   
+(3) Name a new column to move the observation values under.   
+(4) Use pivot_longer to rearrange the columns and row values.   
 
 ```{r}
 table4a <- 
@@ -163,7 +164,8 @@ Make table4b tidy using pivot_longer
 ```{r}
 table4b <- 
   table4b %>% 
-    pivot_longer(<FILL_IN)
+    pivot_longer(c(`1999`, `2000`), names_to = "year", values_to = "population")
+table4b
 ```
 
 Combining two tibbles
@@ -171,7 +173,7 @@ Combining two tibbles
 Try `left_join` to combine two tibbles having columns that are common.
 
 ```{r}
-left_join(tidy4a, tidy4b)
+left_join(table4a, table4b)
 ```
 
 Pivot Wider
@@ -184,8 +186,8 @@ table2
 
 __Issue: one of the columns (`type`) holds an observation whose values are scattered across multiple rows.__
 
-(1) Find the column that take variable names from. (e.g., type)
-(2) Find the column that take values from. (e.g., count)
+(1) Find the column that take variable names from. (e.g., type)  
+(2) Find the column that take values from. (e.g., count)  
 
 Pivot Wider
 ============
@@ -206,7 +208,7 @@ __String Basics with `stringr` package__
 
 - \ is escape 
 ```{r}
-str <- "He said \"what?\""
+str <- "He said \"what?\"" # error?
 str
 writeLines(str) # to remove the escape character from the output
 ```
@@ -257,7 +259,7 @@ Creating Factors (cont)
 What if we don't set the levels?
 ```{r}
 x1 %>% 
-  factor() %>% 
+  factor(levels = month_levels) %>% 
   sort()
 ```
 
@@ -275,15 +277,17 @@ gss_cat  # a tibble
 From the `gss_cat` dataset, visualize distribution of `race` in the dataset.
 
 ```{r}
-ggplot(<FILL_IN>) %>% 
-  geom_<FILL_IN>
+ggplot(gss_cat) +
+  geom_bar(mapping = aes(x = race))
 ```
 
 What are the top 10 most common `relig` in this survey? 
 
 ```{r}
 gss_cat %>% 
-  <FILL_IN>
+  count(relig) %>% 
+  arrange(desc(n)) %>% 
+  head(10)
 ```
 
 Modifying factor order
@@ -291,16 +295,18 @@ Modifying factor order
 Let's look at the following visualization showing the number of hours for watching TV on average by `relig` variable:
 
 ```{r}
-relig_summary <- gss_cat %>%
-  group_by(relig) %>%
-  summarise(
-    age = mean(age, na.rm = TRUE),
-    tvhours = mean(tvhours, na.rm = TRUE),
-    n = n()
-  )
+relig_summary <- 
+  gss_cat %>%
+    group_by(relig) %>%
+    summarise(
+      age = mean(age, na.rm = TRUE),
+      tvhours = mean(tvhours, na.rm = TRUE),
+      n = n()
+    )
 #> `summarise()` ungrouping output (override with `.groups` argument)
 
-ggplot(relig_summary, aes(tvhours, relig)) + geom_point()
+ggplot(relig_summary, aes(tvhours, relig)) + 
+  geom_point()
 ```
 
 It is hard to compare! You often want to reorder the factor in visualization.
@@ -320,7 +326,7 @@ __Use `ordered()` function__
 
 ```{r}
 Births2015 <- read_csv("Births2015.csv")
-# Births2015$wday <- ordered(Births2015$wday, levels = c("Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"))
+Births2015$wday <- ordered(Births2015$wday, levels = c("Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"))
 ggplot(data = Births2015) +
   #  geom_point() +
   geom_boxplot(aes(x = wday, y = births))
@@ -351,7 +357,7 @@ gss_cat %>%
 
 Homework
 ========
-14.3 Matching patterns with regular expressions
+14.3 Matching patterns with regular expressions  
 14.4 Tools
 
 Lab8
