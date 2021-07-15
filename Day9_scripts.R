@@ -6,6 +6,10 @@ library(tidyverse) # For everything we have learned
 library(lubridate) # For dates and times
 library(nycflights13) # For the flights dataset
 
+flights %>% 
+  select(year, month, day, hour, minute) %>% 
+  mutate(departure = make_datetime(year, month, day, hour, minute))
+
 
 # Make date and time from HHMM or HMM number format ----
 make_datetime_100 <- function(year, month, day, time) {
