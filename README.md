@@ -1,10 +1,14 @@
-# Foundtations of Data Science with Capstone at SMU, Summer 2021
+# Foundtations of Data Science with Capstone at SMU, Summer 2023
 
 ## Course Description
 
 Data science is the interdisciplinary study of the tools and theory behind using data to extract knowledge. It combines ideas from statistics, computer science, and particular domains in the physical and social sciences in order to make predictions and optimal decisions.
 
 This summer intensive course is designed with a practical approach. The students will be guided to learn the basics and move on to more advanced topics in 2 weeks. The final 1 week will be dedicated to practicing and presenting data science skills and competency through capstone projects. 
+
+데이터 과학은 데이터를 활용하여 지식을 추출하기 위한 도구와 이론에 관한 다학제적인(interdisciplinary) 연구입니다. 이는 통계학, 컴퓨터 과학, 물리학과 사회과학의 특정 분야에서 아이디어를 결합하여 예측과 최적의 결정을 내리는 데 사용됩니다.
+
+3주간의 여름학기 집중과정은 실용적인 접근 방식으로 설계되었습니다. 학생들은 2주 동안 기초를 학습하고 더욱 고급 주제로 나아갈 수 있도록 마지막 1주에 캡스톤 프로젝트를 하게됩니다. 이 캡스톤 프로젝트를 통해 학생들은 데이터과학에 쓰이는 기술과 역량을 실습하고 마지막에 프로젝트 발표를 하게 될 것입니다.
 
 ## Session 1: Building Foundations (2 weeks)
 During the first 2 weeks, you will learn the foundations of data science including the basics of how to structure, visualize, transform, and model data. The primary programming language that we will be using is R, which is both simple to use and was designed around using data. The development environment we will be using is RStudio. Both R and RStudio are open source, and so may be downloaded to your personal laptop for free.
