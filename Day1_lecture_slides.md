@@ -1,13 +1,8 @@
----
-output:
-  pdf_document: default
-  html_document: default
----
-[Foundations of Data Science with Capstone at SMU, Summer 2021]
+[Foundations of Data Science with Capstone at SMU, Summer 2023]
 Foundations of Data Science with Capstone at SMU
 ========================================================
 author: Dr. Jeho Park
-date: July 4, 2021
+date: July 17, 2023
 autosize: true
 
 
@@ -60,57 +55,47 @@ Course Schedule
 ========================================================
 | Day 	| Title                               	| Topics                                                                                 	|
 |-----	|-------------------------------------	|----------------------------------------------------------------------------------------	|
-| 1   	| Introduction                        	| Introduction to Data Science; RStudio; R Markdown                                      	|
-| 2   	| Data Visualization (1)              	| Graphical grammars (ggplot2)                                                           	|
-| 3   	| Data Visualization (2)              	| Visualization in the tidyverse; Aesthetic mappings                                     	|
-| 4   	| Data Wrangling (1)                  	| R basics for data wrangling; Basic R objects and operators; Transforming data (filter) 	|
-| 5   	| Data Wrangling (2)                  	| Transforming data (dplyr); filter, arrange, select, summarise, group_by; piping        	|
-| 6   	| Exploratory Data Analysis and Stats 	| Why EDA; Some statistics; Variation; Covariation                                       	|
-| 7   	| Working with different data types   	| Vectors; Factors; Strings; Dates and Times                                                      	|
-| 8   	| Programming in R (1)                	| Pipes; Functions; Iteration and vectorization                                          	|
-| 9   	| Programming in R (2)                	| Pipes; Functions; Iteration and vectorization                                          	|
-| 10  	| Modeling                            	| Regression; Linear models; Understanding residual                                      	|
+| 1   	| Introduction and Data Visualization (1)                        	| Introduction to Data Science; RStudio; R Markdown; Graphical grammars (ggplot2)                                      	|
+| 2   	| Data Visualization (2)              	| Visualization in the tidyverse; Aesthetic mappings                                                          	|
+| 3   	| Data Wrangling (1)                  	| R basics for data wrangling; Basic R objects and operators; Transforming data (filter) 	|
+| 4   	| Data Wrangling (2)                  	| Transforming data (dplyr); filter, arrange, select, summarise, group_by; piping        	|
+| 5   	| Exploratory Data Analysis and Stats 	| Why EDA; Some statistics; Variation; Covariation                                       	|
+| 6   	| Working with different data types   	| Vectors; Factors; Strings; Dates and Times                                                      	|
+| 7   	| Programming in R                     	| Pipes; Functions; Iteration and vectorization                                          	|
+| 8  	| Modeling                            	| Regression; Linear models; Understanding residual                                      	|
+| 9  	| Capstone Project Kickoff                       	| Project Proposal Review                                      	|
+| 10  	| Capstone Project Presentation                            	| Online Presentation                                      	|
 
-Week 3 (Day 11 through 15) is dedicated to capstone project.   
-At the end of the week 3 (Day 15), we will have in-person meetings and final presentations.
 
 
 
 Expectations
 ========================================================
-1. __Our main communication language is English__  
-    *You can selectively use Korean (as I can understand Korean well)*
-
 1. __Participation is the key__  
     *Show your attention (camera, gestures, chat, voice, etc.).*
     
-1. __Labs will be run by TAs__  
-    *Due to Time Zone issue, instructor may not be able to answer your questions during your lab session. But he will answer any questions the next day (in Pacific Time)*
+1. __Lab Exercises are mandatory__  
+    *All lab exercises are required to receive a course certificate. During the lab hours, instructor and/or TA will be available to help you solve the problems.*
 
-1. __For the first 1 to 1.5 hours of your lab session, you will not read the exercise solutions__  
-    *This is important for your learning and mastering DS skills. Do not directly refer to the solutions. You can google, look at the text book, ask questions, and discuss different approaches with your teammates.* 
 
-1. __During the first 2-week study, you will need to find a capstone project__  
+1. __During the first 1-week study, you will need to find a capstone project__  
     *Instructor and TA will help you on this*
 
 
 Course Technologies
 ===================
-- Google Drive (file sharing) 
-  - Check if you can access the Google Drive Folder
-- Kakaotalk (communication)
-  - Join the 단톡방
-- GitHub (course materials) https://cmc-qcl.github.io/FoDS_SMU/ (course web page)
-  - It is a private repo
-  - Let me know your GitHub account name to add you to the repo at https://github.com/CMC-QCL/FoDS_SMU 
-
-__How about Slack?__
+- Canvas (homework and discussion)
+  - https://canvas.instructure.com/enroll/EK9RPL (enroll now!)
+- GitHub (course materials)  
+  - https://jehopark.github.io/FoDSxSMU/ (course web page)
+- Communication Channel
+  - Email (dr.jeho.park@gmail.com) and 카톡방?
 
 Course Syllabus
 ========================================================
 See if you can access this doc at
 
-[Course Syllabus](https://drive.google.com/file/d/1QRZiAJOH_GQMtAW0_3HxbOnXARoSfobQ/view?usp=sharing)
+[Course Syllabus]()
 
 Text Book
 ========================================================
@@ -292,6 +277,487 @@ As a team of 2, do all the exercise problems in the sections 27.3:
 (3) By the end of today, drop your exercise file (.Rmd) in the course Google Drive folder (GDrive's FoDS+SMU > Day1 > Lab1).
 
 *At the end of your markdown, add one more section named "Questions" and include any questions that were not answered during the Lab session. I will try to review those questions and answer them tomorrow.*
+
+Course Goals
+========================================================
+__이 수업을 통해 학생들은 데이터 과학을 이해하고 데이터 분석 및 시각화의 중요성을 이해할 것입니다.__
+
+__Students will understand data science and appreciate the importance of data analytics and visualization.__
+
+Course Schedule
+========================================================
+See the [Course Syllabus](https://jehopark.github.io/FoDS_HS/)
+
+Expectations
+========================================================
+1. __참가하는 수업 | Participation is the key__  
+    *Show your attention (open camera, use gestures, chat, voice, etc.).*
+    
+1. __연습/실습하는 수업 | Do all the hands-on examples__  
+    *No exception!*
+
+1. __경험하는 캡스톤 수업 | During the first 2 weeks, you will need to find a data project for your final presentation and poster__  
+    *Instructor and TA will help you on this*
+
+
+Course Technologies
+===================
+- RStudio Cloud Space
+  - https://rstudio.cloud/spaces/273226/join?access_code=ufTTbxnX80uw6W9FrjVWb81grudNRMz4eRXYVwyN 
+- Canvas (homework and discussion)
+  - https://canvas.instructure.com/enroll/K7MAP8
+- GitHub (course materials)  
+  - https://jehopark.github.io/FoDS_HS/ (course web page)
+
+Text Book
+========================================================
+[Main Text] __R for Data Science by Hadley Wickham and Garrett Grolemund__
+
+- https://r4ds.had.co.nz/ (English Version)
+
+- https://bookdown.org/sulgi/r4ds/ (Korean Version) 
+
+[Reference] 
+
+1. __Foundations of Data Science by Mark Huber__  
+  https://www.markhuberdatascience.org/data-science-text
+   
+2. __Hands-On Programming with R by Garrett Grolemund__  
+  https://rstudio-education.github.io/hopr/
+
+Introduction to Data Science
+========================================================
+__Today's Goals__
+
+(1) Make sure everyone sets the RStudio environment   
+(2) Get familiar with RStudio environment  
+(3) Create a first R markdown file  
+(4) Solve exercise problems and add solutions to a markdown (Practice session)  
+
+What is Data Science?  
+=============
+Data science is the interdisciplinary study of the tools and methods that are developed and used to extract meaningful insights from data.
+
+<br><div align="center">
+  <img src="images/data-science-vanndiagram.png" width=600>
+</div>
+
+Image source: https://towardsdatascience.com/introduction-to-statistics-e9d72d818745
+
+Typical Data Science Project Workflow
+===================
+<br><div align="center">
+  <img src="images/data-science.png" width=900>
+</div>
+
+Typical Data Science Tools
+===================
+- Pencil and paper
+- Computer programming software 
+  - Programming: R
+  - Programming: Python
+  - Database: SQL
+  - Statistical applications: SPSS, STATA, SAS, MATLAB, etc.
+
+
+What is R?
+========================================================
+* R is a statistical programming language and environment.
+* R is open source/free.
+* R is widely used.
+* R is cross-platform.
+* R is hard to learn (?)
+
+What is not R?
+========================================================
+* S: R's ancestor
+* S-Plus: Commercial; modern implementation of S
+* SAS: Commercial; widely used in the commercial analytics.
+* SPSS: Commercial; easy to use; widely used in Social Science.
+* MATLAB: Commercial; can do some Stats. 
+* Python: Also can do some Stats; good in deep learning
+
+Which is better for Data Science? R or Python?
+=============
+R is Useful and easier to do __Statistical Modeling and Visualization__
+
+---------
+
+Python has a great collection of libraries to do __Machine learning and Deep Learning__
+
+R Packages
+========================================================
+- R is known for its community and its huge collection of user-generated packages
+- Packages are collections of R functions, data, and compiled code in a well-defined format. The directory where packages are stored is called the library.
+- We will install the `tidyverse` package, a collection of R packages for data science
+
+
+```r
+install.packages('tidyverse') # you can also use RStudio's Packages tab
+
+# You should load dplyr package first to use any functions and datasets in the package
+library(tidyverse) 
+```
+
+What is RStudio?
+========================================================
+* Integrated Development Environment for R
+* Nice combination of GUI and CLI
+* Free and commercial version
+* 4 main windows, tabs, etc
+* Version control: Git and VPN
+* Debugging 
+* Documentation: R Markdown
+  - install.packages("rmarkdown")
+  - http://rmarkdown.rstudio.com/
+* Presentation slides: R Presentation (this one!)
+
+
+How to Get Help
+========================================================
+* Stack Overflow: http://stackoverflow.com/questions/tagged/r
+* Cross-Validated: the statistics Q&A site http://stats.stackexchange.com/
+* Google
+
+
+[Homework] Where to get help?
+=============
+- Find Korean websites/community that you can ask questions about R programming.
+
+[Hands-On] First R Project 
+========================
+
+- From RStudio Cloud, click on the project named `FoDS_HS`
+- Click on "Save a Permanent Copy"
+
+
+R's Arithmetic Operators
+========================
+That's right! R is a programming languge.
+
+```r
+a <- 16 # assignment operator! Is it an arrow sign?
+b <- 3
+add <- a + b
+sub <- a - b
+mult <- a * b
+div <- a / b
+int_div <- a %/% b
+exponent <- a ^ b
+modulus <- a %% b
+```
+
+
+```r
+# a comment is preceded by a hash sign
+```
+
+Documentation: R Markdown 
+========================
+__R Markdown is our main documentation tool__
+
+"R Markdown provides **an unified authoring framework** for data science, combining your code, its results, and your prose commentary. R Markdown documents are fully reproducible and support dozens of output formats, like PDFs, Word files, slideshows, and more."
+
+- Basic Formatting
+  - Global options
+  - Text formats
+- R Code Chunks
+  - Code chunk options
+- R Markdown cheat sheet and quick reference
+  - https://rmarkdown.rstudio.com/lesson-15.HTML
+
+
+[Hands-On] Now it's your turn
+========================================================
+
+Let's create a R Notebook and start the hands-on exercise in the Notebook document.
+
+* Click on _File > New File > R Notebook_
+* Save it as _FoDS_HS_
+* And follow my instructions
+
+Exercise 1:
+
+Create a variable x containing pi times pi, and another variable y containing a square root of x. Show the values as an output.
+
+두개의 새로운 변수 x 와 y 를 만들어보자.   
+x는 pi 곱하기 pi의 값을 y는 x의 제곱근 값을 가지도록 값을 저장하고 두 변수의 값을 output으로 보여보자.
+
+[Hands-On] R Markdown Text Formatting
+========================
+__R Markdown__ 
+
+Let's go over __Section 27.3__ Text Formatting.
+
+- Copy and paste Section 27.3 code snippet into your Rmd file
+
+Session 2
+===========================
+# Visualization
+
+
+Visualization with ggplot2: tidyverse package
+======================
+* Load tidyverse package in your environment
+
+```r
+# if you don't have the package installed yet
+# install.package("tidyverse")
+library(tidyverse)
+```
+>> This should load several packages. See the R message on the console. Notice the "Conflicts" -- what does this mean?
+
+mpg dataset
+==================
+
+```r
+?mpg
+```
+
+<div align="center">
+  <img src="images/mpg.png" width=800>
+</div>
+
+
+
+Visualization with ggplot2: a quick look
+======================
+
+```r
+# library(ggplot2)
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy))
+```
+
+
+```r
+# Compare ggplot() with plot() from base package
+base::plot(mpg$displ, mpg$hwy)
+```
+
+>> Let's look at a grammar of graphics
+
+
+Visualization with ggplot2: A Grammar of Graphics
+=======================
+
+>> A grammar of graphics is a set of tools for building graphics by adding components and transformations __layer by layer__.  
+
+--
+
+>> Every ggplot2 plot has three key components:
+>> - __Data__,
+>> - A set of __aesthetic mappings__ between variables in the data and visual properties, and
+>> - At least one __layer__ which describes how to render each observation. Layers are usually created with a `geom` function.
+
+
+
+Visualization with ggplot2: A Grammar of Graphics (cont.)
+=======================
+>> Every ggplot2 plot has three key components: data, aesthetic mappings, geometric object
+
+
+```r
+library(ggplot2) # load ggplot2 package
+ggplot(data = mpg) + # data
+  geom_point(mapping = aes(x = displ, y = hwy)) # geometric object and aesthetic mapping
+```
+
+Template
+======
+
+```
+ggplot(data = <DATA>) + 
+  <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>))
+```
+
+Visualization with ggplot2: Aesthetic Mapping
+=======================
+Maps data into graphic components: x, y, color, shape, etc.
+
+
+Visualization with ggplot2: A Grammar of Graphics
+=======================
+Most points on the plot form a nice linear relationship while there are some points that don't seem to follow the relationship. What types of cars are they? 
+
+
+```r
+ggplot(data = mpg) +  
+  geom_point(mapping = aes(x = displ, y = hwy, color = class)) # create 
+```
+
+
+```r
+# Color does not always work for everyone. How about different shapes?
+ggplot(data = mpg) +  
+  geom_point(mapping = aes(x = displ, y = hwy, shape = class)) # Any issue with the shape option?
+```
+
+Geometric Objects (geom)
+=======================
+A __geom__ is the geometrical object that a plot uses to represent data. 
+
+For example:  
+- bar charts = bar geoms
+- line charts = line geoms
+- boxplots = boxplot geoms
+- scatter plot = point geoms
+
+>> There are over 40 geoms in ggplot2 package.
+
+Geometric Objects (geom): Where to put aesthetic mapping?
+=======================
+
+```r
+# Using point geom
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy))
+```
+
+
+```r
+# Using smooth geom
+ggplot(data = mpg) + 
+  geom_smooth(mapping = aes(x = displ, y = hwy))
+```
+
+
+```r
+# We can display multiple geoms in one plot
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) +
+  geom_smooth(mapping = aes(x = displ, y = hwy))
+```
+
+Geometric Objects (geom): Where to put aesthetic mapping?
+=======================
+
+```r
+# Using multiple geoms
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point() + 
+  geom_smooth() 
+```
+
+
+```r
+ggplot(data = mpg) + 
+  aes(x = displ, y = hwy) + 
+  geom_point() + # Add mapping = aes(color = class) 
+  geom_smooth() 
+```
+
+
+```r
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) + 
+  geom_smooth() # got error? why?
+```
+
+Mapping Scope: Global and Local
+==========================
+Global mapping: the mappings of variables are done when the `ggplot()` is called  
+
+Local mapping: the mappings of variables are done when the geom layer is called
+
+>> Local mapping in a layer overrides the global mapping for that layer.
+
+
+```r
+library(dplyr) # to use `filter` function below
+
+ggplot(data = mpg) + 
+  aes(x = displ, y = hwy) + 
+  geom_point(mapping = aes(color = class)) + # use the global mapping
+  geom_smooth(data = filter(mpg, class == "subcompact"), se = TRUE) 
+```
+
+Grammar of Graphics
+=====================
+Defines a plot as the combination of
+
+1. __Data__
+2. __Aesthetic Mapping__ (대응)
+3. __Geometric Object (representation)__
+4. (Statistical Transformation)
+5. Position Adjustment
+
+Position Adjustments (demo)
+================
+To add clarification or to show additional information on one plot, we can use position adjustment methods in ggplot2.
+
+(1) To avoid overlapping of points:
+
+
+```r
+ggplot(data = mpg) + 
+  aes(x = displ, y = hwy) + 
+#  geom_point()
+  geom_point(position = "jitter")
+```
+
+Position Adjustments (demo) 2
+================
+(2) To show additional information through visual representation
+
+- Barcharts
+  - Simple barcharts
+  - Colored barcharts
+  - Stacked barcharts
+  - Side-by-side barcharts
+
+
+```r
+ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut, fill = cut))
+```
+
+
+```r
+ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut, fill = clarity))
+```
+
+
+```r
+ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut, fill = clarity), position = "fill")
+```
+
+
+```r
+ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut, fill = clarity), position = "dodge")
+```
+
+
+[LAB1] Day 1 Practice
+==================
+__For all exercises below, save the result ggplot2 object in `p`__
+
+
+- (Lab1\_1) 3.2.4: #4 (modified)   
+__Using the `mpg` data, make a scatterplot of `hwy` vs `cyl`__
+
+--
+
+- (Lab1\_2) 3.3.1: #1 (modified)  
+__What’s gone wrong with this code? Why are the points not blue?__
+
+```r
+not_blue_point_plot <- ggplot(data = mpg) + 
+    geom_point(mapping = aes(x = displ, y = hwy, color = "blue"))
+
+not_blue_point_plot
+```
+
+__Correct the ggplot code above to display blue color for its point geom.__
+
+--
+
+- (Lab1\_3) 3.6.1: #1 (modified)   
+__What geom would you use to draw a boxplot?__  
+__Draw boxplots showing highway miles per gallon for each different car type.__  
 
 
 
