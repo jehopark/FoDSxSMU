@@ -95,7 +95,7 @@ Course Syllabus
 ========================================================
 See if you can access this doc at
 
-[Course Syllabus]()
+[Course Syllabus](https://github.com/jehopark/FoDSxSMU/blob/master/Foundations%20of%20Data%20Science%20with%20Capstone-Summer%202023%20v3.pdf)
 
 Text Book
 ========================================================
@@ -103,7 +103,7 @@ Text Book
 
 - https://r4ds.had.co.nz/ (English Version)
 
-- https://sulgik.github.io/r4ds/ (Korean Version) -- This might be outdated, so check its updates.
+- https://bookdown.org/sulgi/r4ds/ (Korean Version) -- This might be outdated, so check its updates.
 
 [Reference] 
 
@@ -117,15 +117,22 @@ Introduction to Data Science
 ========================================================
 __Today's Goals__
 
-(1) Make sure everyone set the RStudio environment   
+(1) Make sure everyone set the RStudio environment    
 (2) Get familiar with RStudio environment  
 (3) Create a first R markdown file  
-(4) Solve exercise problems and add solutions to a markdown (Lab session)  
+(4) Learn basic visualization methods and grammars of graphics using ggplot2 package   
+(If time permits, solve exercise problems and add solutions to a markdown)
 
 What is Data Science?  
 =============
+## 데이터 과학이란 무엇인가?
 
-Data science consists of the methods and tools for collecting, manipulating, and studying data with a goal of making informed decisions.
+
+데이터 과학은 데이터를 이해하고 활용하기 위해 수학, 통계학, 컴퓨터 과학 등의 다양한 학문과 기술을 결합하는 학문 분야입니다. 
+
+데이터 과학은 데이터를 수집, 정제, 분석하고 모델링하여 통찰력을 얻고 예측이나 패턴 인식을 통해 데이터를 근거로 한 의사 결정을 위해 데이터를 활용하는데 중점을 둡니다. 
+
+데이터 과학은 실제 상황에서 문제를 해결하고 효과적인 의사 결정을 내리기 위해 데이터를 탐색하고 인사이트를 도출하는 모든 프로세스를 포함합니다.
 
 [Breakout Session 1] Open Discussion
 =================
@@ -138,13 +145,13 @@ Data science consists of the methods and tools for collecting, manipulating, and
 Typical Data Science Project Workflow
 ===================
 <br><div align="center">
-  <img src="images/data-science.png" width=800>
+  <img src="images/data-science.png" width=1200>
 </div>
 
 R and RStudio
 =============
 <div align="center">
-  <img src="images/rstudio-interface.png" width=1200>
+  <img src="images/rstudio-interface.png" width=1400>
 </div>
 
 What is R?
@@ -202,15 +209,10 @@ What is RStudio?
 
 How to Get Help
 ========================================================
+* ChatGPT
 * Stack Overflow: http://stackoverflow.com/questions/tagged/r
 * Cross-Validated: the statistics Q&A site http://stats.stackexchange.com/
 * Google
-
-
-[Breakout Session 2] Where to get help?
-=============
-- Find Korean websites/community that you can ask questions about R programming (5 min)
-- Suggest them in the main room (5 min)
 
 
 [Hands-On] Check Your R Environment 
@@ -225,7 +227,7 @@ How to Get Help
 [Hands-On] First R Project 
 ========================
 
-- Create a new project named "FoDS+SMU"
+- Create a new project named "FoDSxSMU"
 
 Documentation: R Markdown 
 ========================
