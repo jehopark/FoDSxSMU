@@ -71,15 +71,15 @@ Course Schedule
 
 Expectations
 ========================================================
-1. __Participation is the key__  
-    *Show your attention (camera, gestures, chat, voice, etc.).*
+1. __참가하는 수업 | Participation is the key__  
+    *Show your attention (open camera, use gestures, chat, voice, etc.).*
     
-1. __Lab Exercises are mandatory__  
-    *All lab exercises are required to receive a course certificate. During the lab hours, instructor and/or TA will be available to help you solve the problems.*
+1. __연습/실습하는 수업 | Do all the hands-on examples__  
+    *No exception!*
 
-
-1. __During the first 1-week study, you will need to find a capstone project__  
+1. __경험하는 캡스톤 수업 | During the first 2 weeks, you will need to find a data project for your final presentation and poster__  
     *Instructor and TA will help you on this*
+
 
 
 Course Technologies
@@ -251,7 +251,7 @@ Open "Basic_formatting.Rmd"
 ========================
 __R Markdown__  
 
-1. Create a new R Markdown (Rmd) file named "My First Rmd"
+1. Create a new R Markdown (Rmd) file named "FoDSxSMU_Day1"
 1. Check if you have knitr package (if not, install it)
 1. Check R Markdown Cheatsheet
 1. Check this website
@@ -266,232 +266,15 @@ Let's go over __Section 27.3__ Text Formatting.
 - Copy and paste Section 27.3 code snippet into your Rmd file
 
 
-[LAB1] R Markdown Exercise 
+[Hands-On Exercise 1] R Markdown Exercise 
 =================
-As a team of 2, do all the exercise problems in the sections 27.3:
-- 27.3.1 Exercises
 
+1. Add your name in the header section
 
-(1) First create a new markdown and name it "FoDS+SMU LAB1"
+1. Do 27.3.1 #2 exercise
 
-(2) Include the exercise problems and your answers (in Korean if you prefer)
+1. By the end of today's lab session, upload your Rmd file at Canvas 과제제출 페이지 (Hands-On Exercise #1 R Markdown)
 
-(3) By the end of today, drop your exercise file (.Rmd) in the course Google Drive folder (GDrive's FoDS+SMU > Day1 > Lab1).
-
-*At the end of your markdown, add one more section named "Questions" and include any questions that were not answered during the Lab session. I will try to review those questions and answer them tomorrow.*
-
-Course Goals
-========================================================
-__이 수업을 통해 학생들은 데이터 과학을 이해하고 데이터 분석 및 시각화의 중요성을 이해할 것입니다.__
-
-__Students will understand data science and appreciate the importance of data analytics and visualization.__
-
-Course Schedule
-========================================================
-See the [Course Syllabus](https://jehopark.github.io/FoDS_HS/)
-
-Expectations
-========================================================
-1. __참가하는 수업 | Participation is the key__  
-    *Show your attention (open camera, use gestures, chat, voice, etc.).*
-    
-1. __연습/실습하는 수업 | Do all the hands-on examples__  
-    *No exception!*
-
-1. __경험하는 캡스톤 수업 | During the first 2 weeks, you will need to find a data project for your final presentation and poster__  
-    *Instructor and TA will help you on this*
-
-
-Course Technologies
-===================
-- RStudio Cloud Space
-  - https://rstudio.cloud/spaces/273226/join?access_code=ufTTbxnX80uw6W9FrjVWb81grudNRMz4eRXYVwyN 
-- Canvas (homework and discussion)
-  - https://canvas.instructure.com/enroll/K7MAP8
-- GitHub (course materials)  
-  - https://jehopark.github.io/FoDS_HS/ (course web page)
-
-Text Book
-========================================================
-[Main Text] __R for Data Science by Hadley Wickham and Garrett Grolemund__
-
-- https://r4ds.had.co.nz/ (English Version)
-
-- https://bookdown.org/sulgi/r4ds/ (Korean Version) 
-
-[Reference] 
-
-1. __Foundations of Data Science by Mark Huber__  
-  https://www.markhuberdatascience.org/data-science-text
-   
-2. __Hands-On Programming with R by Garrett Grolemund__  
-  https://rstudio-education.github.io/hopr/
-
-Introduction to Data Science
-========================================================
-__Today's Goals__
-
-(1) Make sure everyone sets the RStudio environment   
-(2) Get familiar with RStudio environment  
-(3) Create a first R markdown file  
-(4) Solve exercise problems and add solutions to a markdown (Practice session)  
-
-What is Data Science?  
-=============
-Data science is the interdisciplinary study of the tools and methods that are developed and used to extract meaningful insights from data.
-
-<br><div align="center">
-  <img src="images/data-science-vanndiagram.png" width=600>
-</div>
-
-Image source: https://towardsdatascience.com/introduction-to-statistics-e9d72d818745
-
-Typical Data Science Project Workflow
-===================
-<br><div align="center">
-  <img src="images/data-science.png" width=900>
-</div>
-
-Typical Data Science Tools
-===================
-- Pencil and paper
-- Computer programming software 
-  - Programming: R
-  - Programming: Python
-  - Database: SQL
-  - Statistical applications: SPSS, STATA, SAS, MATLAB, etc.
-
-
-What is R?
-========================================================
-* R is a statistical programming language and environment.
-* R is open source/free.
-* R is widely used.
-* R is cross-platform.
-* R is hard to learn (?)
-
-What is not R?
-========================================================
-* S: R's ancestor
-* S-Plus: Commercial; modern implementation of S
-* SAS: Commercial; widely used in the commercial analytics.
-* SPSS: Commercial; easy to use; widely used in Social Science.
-* MATLAB: Commercial; can do some Stats. 
-* Python: Also can do some Stats; good in deep learning
-
-Which is better for Data Science? R or Python?
-=============
-R is Useful and easier to do __Statistical Modeling and Visualization__
-
----------
-
-Python has a great collection of libraries to do __Machine learning and Deep Learning__
-
-R Packages
-========================================================
-- R is known for its community and its huge collection of user-generated packages
-- Packages are collections of R functions, data, and compiled code in a well-defined format. The directory where packages are stored is called the library.
-- We will install the `tidyverse` package, a collection of R packages for data science
-
-
-```r
-install.packages('tidyverse') # you can also use RStudio's Packages tab
-
-# You should load dplyr package first to use any functions and datasets in the package
-library(tidyverse) 
-```
-
-What is RStudio?
-========================================================
-* Integrated Development Environment for R
-* Nice combination of GUI and CLI
-* Free and commercial version
-* 4 main windows, tabs, etc
-* Version control: Git and VPN
-* Debugging 
-* Documentation: R Markdown
-  - install.packages("rmarkdown")
-  - http://rmarkdown.rstudio.com/
-* Presentation slides: R Presentation (this one!)
-
-
-How to Get Help
-========================================================
-* Stack Overflow: http://stackoverflow.com/questions/tagged/r
-* Cross-Validated: the statistics Q&A site http://stats.stackexchange.com/
-* Google
-
-
-[Homework] Where to get help?
-=============
-- Find Korean websites/community that you can ask questions about R programming.
-
-[Hands-On] First R Project 
-========================
-
-- From RStudio Cloud, click on the project named `FoDS_HS`
-- Click on "Save a Permanent Copy"
-
-
-R's Arithmetic Operators
-========================
-That's right! R is a programming languge.
-
-```r
-a <- 16 # assignment operator! Is it an arrow sign?
-b <- 3
-add <- a + b
-sub <- a - b
-mult <- a * b
-div <- a / b
-int_div <- a %/% b
-exponent <- a ^ b
-modulus <- a %% b
-```
-
-
-```r
-# a comment is preceded by a hash sign
-```
-
-Documentation: R Markdown 
-========================
-__R Markdown is our main documentation tool__
-
-"R Markdown provides **an unified authoring framework** for data science, combining your code, its results, and your prose commentary. R Markdown documents are fully reproducible and support dozens of output formats, like PDFs, Word files, slideshows, and more."
-
-- Basic Formatting
-  - Global options
-  - Text formats
-- R Code Chunks
-  - Code chunk options
-- R Markdown cheat sheet and quick reference
-  - https://rmarkdown.rstudio.com/lesson-15.HTML
-
-
-[Hands-On] Now it's your turn
-========================================================
-
-Let's create a R Notebook and start the hands-on exercise in the Notebook document.
-
-* Click on _File > New File > R Notebook_
-* Save it as _FoDS_HS_
-* And follow my instructions
-
-Exercise 1:
-
-Create a variable x containing pi times pi, and another variable y containing a square root of x. Show the values as an output.
-
-두개의 새로운 변수 x 와 y 를 만들어보자.   
-x는 pi 곱하기 pi의 값을 y는 x의 제곱근 값을 가지도록 값을 저장하고 두 변수의 값을 output으로 보여보자.
-
-[Hands-On] R Markdown Text Formatting
-========================
-__R Markdown__ 
-
-Let's go over __Section 27.3__ Text Formatting.
-
-- Copy and paste Section 27.3 code snippet into your Rmd file
 
 Session 2
 ===========================
