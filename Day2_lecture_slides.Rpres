@@ -1,8 +1,8 @@
-[Foundations of Data Science with Capstone at SMU, Summer 2021]
-Day 2: Visualization (1)
-============================
+[Foundations of Data Science with Capstone at SMU, Summer 2023]
+Day 2: Visualization (2)
+========================================================
 author: Dr. Jeho Park
-date: 
+date: 2023-07-18
 autosize: true
 
 ```{r setup, include=FALSE}
@@ -10,143 +10,18 @@ knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_chunk$set(eval = FALSE)
 ```
 
-Course Site via Canvas
-===================
-
-[Online Course Site] <https://canvas.instructure.com/courses/3090373>
-
-- Announcements
-- Discussions
-- Assignments
-- Files
-- Quizzes/Surveys 
-- Mobile App (App login must use *QR Login*)
-
-__Note: We will not use Google Drive due to some deficiencies as a Learning Management System.__
-
-### Communication Channels
-- Canvas: https://canvas.instructure.com/courses/3090373
-
-*Make sure you can log in to the course site NOW*
-
-Daily Survey
-=============
-
-- Log in to Canvas from your browser
-- Open Assignments
-- Open Day1 Survey
-- Take the survey (it will  only take a few minutes)
-
-DAY1 and LAB1 Review and Q&A
-=========================
-- R and RStudio should be installed on your computer
-- RStudio's project for the course should be created
-- Make sure you have a GitHub account
-- Make sure you can render R Markdown (Rmd) file
-
-__Questions__
-
-1. I had a problem downloading the second package,(rmarkdown) from the class, and the error said that I didn't have a lib location. How can I fix this?
-
-2. Why does it always have same three code chunks set as default when I create a new markdown? Is it because I have downloaded a package?
-
-3. I wrote my date as 2021/7/5 on this document but if I knit it it appears as 2016/8/25. What is wrong?
-
-
 Today's Topics
 ==============
-- Where to get help 
-- Grammar of graphics
-- Introduction to ggplot2
-- Visualization: point geom
-- Faceting
-- R Fomula
-- Discrete Variable
+- Visualization with ggplot2
+- Faceting by one variable
+- Types of variables (in stats)
+- Faceting by two variables
+- Geometric Objects
+- Mapping scope: Global vs. Local
+- Statistical Transformations
+- Visual Transformations
 
-How to Get Help
-=====================
-* Stack Overflow: http://stackoverflow.com/questions/tagged/r
-* Cross-Validated: the statistics Q&A site http://stats.stackexchange.com/
-* Google!
-
-
-[Breakout Session] Where to get help?
-=============
-- Find Korean websites/community that you can ask questions about R programming (5 min)
-- Suggest them in the main room (5 min)
-
-
-Typical Data Science Project Workflow
-===================
-![Workflow](./images/data-science.png)
-
-
-Goal of First Few Days
-====================
-__Learn fun and intuitive ways to use R for Data Science__
-
-An Example: John Snow's Map
-===============
-__For informed decision making (data-driven decision making), visualization is much more important than you may think__
-
-<https://www.arcgis.com/apps/PublicInformation/index.html?appid=d7deb67f810d46dfacb80ff80ac224e9>
-
-
-Visualization with ggplot2: tidyverse package
-======================
-* Load tidyverse package in your environment
-```{r}
-# if you don't have the package installed yet
-# install.package("tidyverse")
-library(tidyverse)
-```
->> This should load several packages. See the R message on the console. Notice the "Conflicts" -- what does this mean?
-
-Visualization with ggplot2: a quick look
-======================
-```{r}
-# library(ggplot2)
-ggplot(data = mpg) + 
-  aes(x = displ, y = hwy, color = class) + 
-  geom_point() 
-```
-
-```{r}
-# Compare ggplot() with plot() from base package
-base::plot(mpg$displ, mpg$hwy)
-```
-
->> Let's look at a grammar of graphics
-
-Visualization with ggplot2: A Grammar of Graphics
-=======================
-
->> A grammar of graphics is a set of tools for building graphics by adding components and transformations __layer by layer__.  
-
---
-
->> Every ggplot2 plot has three key components:
->> - __Data__,
->> - A set of __aesthetic mappings__ between variables in the data and visual properties, and
->> - At least one __layer__ which describes how to render each observation. Layers are usually created with a `geom` function.
-
-```{r}
-ggplot(data = mpg) + # data
-  aes(x = displ, y = hwy) + # aesthetic mapping
-  geom_point() # layer (geometric object)
-```
-
-Breakout Session: Guess a relationship between two variables
-=======================
-1. Look at the help document of the data frame `mpg` (how?)
-
-
-2. Discuss relationship between any two variables, e.g., engine displacement in liters and highway MPG.
-
-3. See if your guess is in line with the scatter plot
-
-
-Visualization with ggplot2: A Grammar of Graphics
+Visualization with ggplot2: Aesthetic Mapping
 =======================
 Most points on the plot form a nice linear relationship while there are some points that don't seem to follow the relationship. What types of cars are they? 
 
@@ -161,13 +36,28 @@ ggplot(data = mpg) +
   geom_point(mapping = aes(x = displ, y = hwy, shape = class)) # Any issue with the shape option?
 ```
 
+What is Aesthetic Mapping?
+============
+
+Aesthetic mappings describe how variables in the data are mapped to visual properties (aesthetics) of geoms. 
+
+미학적 매핑은 데이터의 변수가 지옴(Geom)의 시각적 속성(미학적 요소)에 어떻게 대응되는지를 설명합니다.
+
+Facetting
+============
+플롯을 면분할(facet, 데이터 각 서브셋을 표시하는 하위 플롯)로 나누는 방법
+<br><div align="center">
+  <img src="images/facetting_example.png" width=900>
+</div>
+
+
 Faceting by a single variable
 =========
 __Use `facet_wrap`__
 
 1. the first argument should be a *formula* and  
 
-2. the variable that you pass to `facet_wrap` should be *discrete*.
+2. the variable that you pass to `facet_wrap` should be *discrete* (*이산변수*).
 
 ```{r}
 ggplot(data = mpg) + 
@@ -177,18 +67,256 @@ ggplot(data = mpg) +
 # facet_wrap(. ~ class, nrow = 2) # same result
 ```
 
->> Question: What is `~` for?
-
 What is a R formula?
 ==================
-A formula is an R object containing a symbolic representation of a relationship between variables. For example, **y ~ x + a** is a *formula* which we may read "`y` varies with `x` and `a` (note that the meaning depends on the function in which the formula is used). In most modeling cases, the left-hand side of a tilde (~) is the "dependent variable" (or "response") and the right-hand side is the "independent variable" (or "predictor"). 
+A formula is an R object containing a symbolic representation of a relationship between variables. Formulas are not For example, **y ~ x + a** is a *formula* which we may read "`y` varies with `x` and `a` (note that the meaning depends on the function in which the formula is used). In most modeling cases, the left-hand side of a tilde (~) is the "dependent variable" (or "response") and the right-hand side is the "independent variable" (or "predictor"). 
 
 Example: In a data frame, you have a variable `t` for temperature and another variable `m` for month. Clearly, month do not vary with temperature, but temperature varies with month. So, you want to see how the temperature varies for different month. How do you write a formula for this model?
 
-LAB2
+What is a discrete variable?
+===================
+![Variable Types](./images/variable-types.png)
+
+Source: https://statsandr.com/blog/variable-types-and-examples/
+
+What is a discrete variable?
+===================
+
+>> Quantitative *discrete* variables (이산변수) are numeric variables for which the values it can take are __countable__ and have a __finite number of possibilities__. The values are usually, but not always, integers. For example:
+
+>> - Number of children per family
+>> - Number of students in a class
+>> - Number of citizens of a country
+  
+
+Key Point: 
+- 숫자로 되어 있을것. 
+- 셀 수 있을 것. 
+- 유한개의 경우가 있을 것.
+
+Then, what is a continuous variable?
+===================
+>> Quantitative *continuous* variables (연속변수) are numerical measurements whose values are __not countable__ and have an __infinite number of possibilities__. For example:
+
+>> - Age
+>> - Weight
+>> - Height
+
+Key Point:
+- 셀수 없을 것
+- 무한개의 경우가 있을 것
+
+Q: Classify the following variables as continuous or discrete:
+===============================================
+(1) Temperature in Asan  
+
+(2) The number of sales made in a week  
+
+(3) Time taken to run a 100-meter dash   
+
+(4) The quantity of fat in samgyupsal  
+
+(5) The number of trout in Sinjungho  
+
+Faceting by two variables
+=========
+To facet your plot on the combination of two variables, add facet_grid() to your plot call.
+
+```{r}
+ggplot(data = mpg) + 
+  aes(x = displ, y = hwy) + 
+  geom_point() + 
+  facet_grid(drv ~ class)
+```
+
+The differences between facet_wrap and facet_grid
+================
+
+![Facets](./images/position-facets.png)
+
+- facet_grid() (left) is fundamentally 2d, being made up of two independent components. 
+- facet_wrap() (right) is 1d, but wrapped into 2d to save space.
+
+[Source: https://ggplot2-book.org/facet.html]
+
+Geometric Objects (geom)
+=======================
+A __geom__ is the geometrical object that a plot uses to represent data. 
+
+For example:  
+- bar charts = bar geoms
+- line charts = line geoms
+- boxplots = boxplot geoms
+- scatter plot = point geoms
+
+>> There are over 40 geoms in ggplot2 package.
+
+Geometric Objects (geom): Where to put aesthetic mapping?
+=======================
+```{r}
+# Using point geom
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy))
+```
+
+```{r}
+# Using smooth geom
+ggplot(data = mpg) + 
+  geom_smooth(mapping = aes(x = displ, y = hwy))
+```
+
+```{r}
+# We can display multiple geoms in one plot
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) +
+  geom_smooth(mapping = aes(x = displ, y = hwy))
+```
+
+Geometric Objects (geom): Where to put aesthetic mapping?
+=======================
+```{r}
+# Using multiple geoms
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point() + 
+  geom_smooth() 
+  
+```
+
+```{r}
+ggplot(data = mpg) + 
+  aes(x = displ, y = hwy) + 
+  geom_point() + # Add mapping = aes(color = class) and see the difference
+  geom_smooth() 
+  
+```
+
+Mapping Scope: Global and Local
+==========================
+- Global mapping: the mappings of variables done when the `ggplot()` is called
+- Local mapping: the mappings of variables done when the geom layer is called
+
+>> Local mapping in a layer overrides the global mapping for that layer.
+
+```{r}
+# library(dplyr) # to use `filter` function below
+
+ggplot(data = mpg) + 
+  aes(x = displ, y = hwy) + 
+  geom_point(mapping = aes(color = class)) + # use the global mapping
+  geom_smooth(data = filter(mpg, class == "subcompact"), se = TRUE) 
+  
+```
+
+Grammar of Graphics
+=====================
+Defines a plot as the combination of
+
+1. __Data__
+2. __Aesthetic Mapping__
+3. __Geometric Object (representation)__
+4. Statistical Transformation
+5. Position Adjustment
+
+Statistical Transformations (1) | Breakout Session
 ==================
-- 3.2.4: Do all the problems
-- 3.3.1: Do all the problems
+Let's take a look at the `diamonds` dataset included in the `ggplot2` package.
+
+In your team, discuss the following:
+
+>> Q1: What are the variables in the `diamonds` data frame?
+
+>> Q2: Which variables are quantitative and which are qualitative?
+
+>> Q3: Which variables are quantitative discrete and which are quantitative continous?
+
+>> Q4: What are some visualizations you want to create? (Come up with at least one)
+
+Statistical Transformations (2)
+==================
+### Some plots visualize a transformation of the original data set. 
+
+Look at the following two plots and find the one that has a transformation variable in the result.
+
+```{r}
+ggplot(data = diamonds) + 
+  aes(x = carat, y = price) +
+  geom_point()
+```
+
+```{r}
+ggplot(data = diamonds) + 
+  aes(x = price) +
+  geom_histogram()
+```
+
+Statistical Transformations (3)
+==================
+>- bar charts, histograms, and frequency polygons bin your data and then plot bin counts, the number of points that fall in each bin.
+
+>- smoothers fit a model to your data and then plot predictions from the model.
+
+>- boxplots compute a robust summary of the distribution and then display a specially formatted box.
+
+Statistical Transformations (4): Boxplots
+==================
+```{r}
+ggplot(data = mpg, mapping = aes(x = class, y = hwy)) + 
+  geom_boxplot()
+```
+
+![Boxplot](images/boxplot.png)
+
+Visual Transformations (= Position Adjustments)
+================
+To add clarification or to show additional information on one plot, we can use position adjustment methods in ggplot2.
+
+(1) To avoid overlapping of points:
+
+```{r}
+ggplot(data = mpg) + 
+  aes(x = displ, y = hwy) + 
+#  geom_point()
+  geom_point(position = "jitter")
+```
+
+Visual Transformations (2) Demo
+================
+(2) To show additional information through visual representation
+
+- Barcharts
+  - Simple barcharts
+  - Colored barcharts
+  - Stacked barcharts
+  - Side-by-side barcharts
+
+```{r}
+ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut, fill = cut))
+```
+
+```{r}
+ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut, fill = clarity))
+```
+
+```{r}
+ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut, fill = clarity), position = "fill")
+```
+
+```{r}
+ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut, fill = clarity), position = "dodge")
+```
 
 
+LAB2
+=============
+For lab session:
+- 3.5.1: #1, #2, #3, #4
+- 3.6.1: #1, #2, #3, #4, #5
+
+For your homework:
+- Lab1_2
+- Lab1_3
 
