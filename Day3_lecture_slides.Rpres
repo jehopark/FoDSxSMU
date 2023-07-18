@@ -1,0 +1,348 @@
+[Foundations of Data Science with Capstone at SMU, Summer 2023]
+Day 3: Data Wrangling (1)
+========================================================
+author: Dr. Jeho Park
+date: 2023-07-19
+autosize: true
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(eval = FALSE)
+```
+
+Day2 Hands-On and Exercises
+========================================================
+
+__Before we move on to learn data wrangling methods, please take Day 2 quiz now.__
+
+__Let's do a couple of Lab2 Homework__
+
+Git Setup
+==========
+__We will be using RStudio's Git/GitHub feature__
+
+Instructor RStudio -------------------------------------------------> Student RStudio
+
+Instructor RStudio --- push --> [GitHub Repo] --- pull --> Student RStudio
+
+(1) Download and install git on your computer: https://git-scm.com/downloads  
+(2) Restart RStudio   
+(3) Go to your preference and check if RStudio has the git installation information.  
+(4) Create a new project with a GitHub repo attached to it. (Follow instructions)
+
+
+
+Today's Topics
+==============
+- Basic R Information
+- Basic R Objects
+- Subsetting
+- What is Data Wrangling?
+- Working with Data
+
+What Can We Do with R? Math (of course!)
+========================================================
+```{r, eval=FALSE}
+1+1
+```
+
+```{r, eval=FALSE}
+2+runif(1,min=0,max=1)
+```
+
+```{r, eval=FALSE}
+3^2
+```
+
+```{r, eval=FALSE}
+3*3
+```
+
+```{r, eval=FALSE}
+sqrt(3*3) # square root function
+```
+
+```{r}
+# comments are preceded by hash sign sqrt(3*3)
+```
+
+
+Some R Vocabulary
+========================================================
+* **packages** are add on features to R  include data, new functions and methods, and extended capabilities. Think of them as `apps` on your phone. We've already installed several!
+* **console** is the main window of R where you enter commands
+* **workspace** is the working memory of R where all objects are stored
+* **script** is where you store commands to be run in the terminal later, like syntax files in SPSS, .do files in Stata, and py files in Python.
+* **function** is a set of commands doing something to R object(s) by getting inputs, do work, and return outputs. 
+
+Some Gene-R-al Stuff
+========================================================
+```{r, eval=FALSE}
+demo() # display available demos
+
+```{r, eval=FALSE}
+demo(graphics) # try graphics demo
+
+```{r, eval=FALSE}
+library() # show available packages on the computer
+
+```{r, eval=FALSE}
+?hist # search for the usage of hist function
+```
+
+```{r, eval=FALSE}
+??histogram # search for package documents containing the word "histogram"
+```
+
+Workspace of R
+========================================================
+
+R workspace stores objects like vectors, datasets and functions in memory (the available space for calculation is limited to the size of the RAM).
+
+```{r}
+a <- 5 # notice a in your Environment window
+```
+
+```{r}
+A <- "text" 
+```
+
+```{r, eval=FALSE}
+a
+A
+ls()
+print(c(a,A)) # Guess what the c stands for 
+print(a,A)
+```
+
+Basic R Objects: Vectors
+========================================================
+Vectors are array objects of the __same type__ data elements.
+
+```{r, eval=FALSE}
+class(a)
+```{r, eval=FALSE}
+class(A)
+```{r, eval=FALSE}
+b <- c(a,A) # concatenation
+```{r, eval=FALSE}
+print(b)
+```{r, eval=FALSE}
+class(b) # why?
+```
+
+Basic R Objects: Vectors (cont.)
+========================================================
+R has five basic or “atomic” classes of objects: 
+* character
+* numeric (real numbers) 
+* integer
+* complex
+* logical (True/False)
+
+A vector contains a set of data in any one of the atomic classes.
+
+Basic R Objects: Data frames
+========================================================
+__Data frames are used for storing data tables as a collection of vectors of equal length.__  
+  
+__A data frame is a basic data object for this course!__
+
+```{r, eval=FALSE}
+n <- c(2, 3, 5) # a vector 
+s <- c("aa", "bb", "cc") # a vector
+b <- c(TRUE, FALSE, TRUE) # a vector 
+df <- data.frame(n, s, b) # a data frame
+df
+mtcars # a built-in (attached) data frame
+mtcars$mpg # notice this $ operator
+```
+
+Basic R Objects: Data frames (cont.)
+========================================================
+__Data frames are used for storing data tables__  
+__It is a column-wide collection of vectors of equal length__.
+
+<div align="center">
+  <img src="images/df.png" width=300>
+</div>
+
+Basic R Objects: Data frames (cont.)
+========================================================
+__Data frames are used for storing data tables__  
+__It is a column-wide collection of vectors of equal length__. 
+```{r, eval=FALSE}
+df1 <- data.frame(y1=rnorm(1000),y2=rnorm(1000), y3=rnorm(1000))
+head(df1) # display first few lines of data
+names(df1) # display column names
+summary(df1) # output depends on the data types
+plot(df1)
+hist(df1$y1)
+```
+
+```{r, eval=FALSE}
+df2 <- read.table("https://s3.amazonaws.com/assets.datacamp.com/blog_assets/test.txt", header = FALSE)
+df2
+```
+
+R Objects: Factor
+========================================================
+* Factors are a special compound object used to represent __categorical data__ such as gender(성별), nationality(국적), grades(성적), etc.
+* Factors have 'levels' attribute. They may be nominal(이름뿐인/명목 척도) or ordinal(순위 척도).
+* Remember the types of variables from Day 2? Factors are the R's implementation of quantitative variables.
+```{r, eval=FALSE}
+v <- c("a","b","c","c","b","d","f")
+x <- factor(v) # turn the character vector into a factor object
+z <- factor(v, ordered = TRUE) # ordered factor
+x
+z
+table(x)
+```
+
+R Objects: Functions
+=============================
+```{r, eval=FALSE}
+multiply <- function(a,b) {
+  a*b
+}
+
+multiply   
+multiply(2,3) # a function call
+```
+
+Tibbles
+====================
+Tibbles are data frames, but better!
+
+```{r}
+vignette("tibble")
+```
+
+```{r}
+library("tidyverse") 
+iris # data.frame
+iris_tibble <- as_tibble(iris)
+iris_tibble # tibble
+```
+
+Subsetting
+===============
+
+```{r}
+tbbl <- tibble(
+  x = runif(5),
+  y = rnorm(5)
+)
+tbbl # A tibble: 5 x 2 
+```
+
+Subsetting operators: `$`, `[ ]`, and `[[ ]]` 
+
+```{r}
+tbbl$x
+tbbl[1]
+tbbl[[1]]
+```
+
+Subsseting (cont.)
+=========================
+Operators that can be used to extract subsets of R objects.
+* '[' and ']' always returns an object of the same class as the original; can be used to select more than one element.
+* '[[' and ']]' is used to extract elements of a list or a data frame; it can only be used to extract a single element.
+* $ is used to extract elements of a list or data frame by name.
+
+Subsetting (cont.2)
+==========================
+```{r, eval=FALSE}
+x <- c("a", "b", "c", "c", "d", "a")
+x[1]
+x[1:4]
+x[x > "a"] 
+u <- x > "a" # what's u here?
+u
+x[u] # subsetting using a boolean vector
+y <- list(foo=x, bar=x[u]) 
+y
+y[[1]]
+y$bar
+```
+```{r, eval=FALSE}
+subset(mtcars, gear == 5) # use of subset function for data frames
+```
+
+
+Variable and Object Naming Convention
+===================
+Find all that can be a variable (or object) name in R from the following:
+
+```{r}
+(1) 4wheelDrive   
+
+(2) four_wheel_drive  
+
+(3) fourWheelDrive  
+
+(4) !my4wheeldrive  
+
+(5) _4wheelDrive  
+
+(6) Four.Wheel.Drive  
+```
+
+
+What is Data Wrangling?
+======================================
+<div align="center">
+  <img src="images/wrangling-nat-geo.jpg" width=800>
+</div>
+Source: Wrangling Wild Horses in the Mountains of Montana (Director: Kristopher Rey-Talley) | Short Film Showcase | National Geographic Channel on Youtube (https://youtu.be/vkBtEe-lieU?t=131) | clip from 2:11 to 3:11
+
+What is Data Wrangling?
+=============================================
+Data wrangling is the process of obtaining, cleaning, reshaping and transforming raw (and messy) data into a usable form of processed (and tidy) data.
+
+![Data Wrangling](./images/Data_Wrangling_with_R.png)  
+Source: "Data Wrangling with R" by Bradley C. Boehmke | Use R! Series
+
+Working with Data
+========================================================
+* Built-in datasets and basic data import
+* Quick data exploration with summary
+* Hands-on exercise
+
+Built-in Datasets 
+========================================================
+- R's datasets package has some built in datasets that we will be using.
+```{r eval=F}
+data() # this will bring up a document, R data sets
+```
+
+- Let's look at CO2 datasets. The CO2 data frame has 84 rows and 5 columns of data from an experiment on the cold tolerance of the grass species Echinochloa crus-galli.
+```{r eval=F}
+help(CO2) # see what the dataset is about
+CO2 # display all the contents of the data frame, CO2
+```
+
+__Notice there's no CO2 dataframe in the Environment pane__
+
+Data Import
+========================================================
+__Data file import is very easy with RStudio__
+
+Follow the instructor and import "auto.csv" file!
+
+Click-click-click-done!
+
+Check if you have *Births2015* in your Environment.
+
+[Hands-On] Data Exploration - Head or Tail?
+========================================================
+When you have a large dataset, it's impossible and inconvenient to display the whole contents of the dataset on the screen. You will want to check the first few rows or the last few rows of the dataset. 
+
+In this exercise, you will create a Code Chunk in a new Notebook and do the following:  
+(1) Import "Births2015.csv" as Births2015  
+(2) Output the first row of Births2015 using R's built-in function  
+(3) Output the last row of Births2015 using R's built-in function  
+
+
+
