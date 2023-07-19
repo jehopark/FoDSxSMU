@@ -1,0 +1,35 @@
+---
+title: "Day 4 Hands-On"
+output: html_notebook
+author: Jeho Park
+---
+
+## Filter and Logical Operators
+
+(1) Find all flights that departed in November or December.
+
+(2) Find all flights that weren’t delayed on arrival by more than two hours
+
+## Arrange and find
+
+(1) Sort flights to find the most delayed flights. Find the flights that left earliest.
+
+(2) Which flights traveled the farthest? Which traveled the shortest?
+
+## More on select and arrange
+(1) Select dep_time, sched_dep_time, dep_delay, arr_time, sched_arr_time, and arr_delay from flights and save the subset as flights_time.
+
+(2) Arrange flights_time by dep_delay in descending order and then by arr_delay in descending order. Save this sorted data frame as flights_time2
+
+(3) Make an one-liner code for the two steps (#1 and #2 above). Use nested function calls. Save this selected and sorted data frame as flights_time3
+
+
+## Find the most delayed plane on average for arrivals
+
+(1) Remove rows having NA in dep_delay and arr_delay (The results will be a data frame with no canceled flights.)
+
+(2) Save the filtered data frame as not_canceled
+
+(3) Summarise the not_canceld data frame by average arrival delay (arr_delay), grouped by plane (tailnum)
+
+(4) Find the plane (identified by it tail number) that have the highest average arrival delay and report how long it delayed its arrivals on average.
