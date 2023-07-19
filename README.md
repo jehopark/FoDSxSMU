@@ -1,6 +1,6 @@
 # Foundtations of Data Science with Capstone at SMU, Summer 2023
 
-## Course Description
+## Course Description test
 
 Data science is the interdisciplinary study of the tools and theory behind using data to extract knowledge. It combines ideas from statistics, computer science, and particular domains in the physical and social sciences in order to make predictions and optimal decisions.
 
