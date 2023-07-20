@@ -83,7 +83,7 @@ Logical Operators
 | &        | Element-wise logical AND |
 | &&       | Logical AND              |
 | |         | Element-wise logical OR  |
-| ||         | Logical OR               |
+| ||        | Logical OR               |
 | xor(x,y) | Exclusive OR             |
 
 TRUE or FALSE
@@ -181,9 +181,9 @@ In real world datasets, a data frame may have hundreds or thousands of columns. 
 ===============
 1. Select `dep_time`, `sched_dep_time`, `dep_delay`, `arr_time`, `sched_arr_time`, and `arr_delay` from flights and save the subset as `flights_time`.
 
-2. Arrange `flights_time` by `dep_delay` in descending order and then by `arr_delay` in descending order. Save this sorted data frame as `flights_time2`
+2. Arrange `flights_time` by `dep_delay` in descending order and then by `arr_delay` in descending order. Save this sorted data frame back to `flights_time`
 
-3. Make an one-liner code for the two steps (#1 and #2 above). Use nested function calls. Save this selected and sorted data frame as `flights_time3`
+3. Make an one-liner code for the two steps (#1 and #2 above). Use nested function calls. Save this selected and sorted data frame back to `flights_time`
 
 Piping using %>%
 ==========================================
@@ -295,7 +295,7 @@ __Measures of Location__
 - `median()` is useful to find an observation at the middle when all the obs are sorted from smallest to largest.
 
 ```{r}
-x <- c(10, 5, 2, 4, 3, 9, 6, 7, 8, 1, 0)
+x <- c(10, 5, 2, 4, 3, 9, 6, 7, 8, 1)
 median(x)
 ```
 
@@ -316,6 +316,5 @@ LAB5
 - 5.2.4: #1
 - 5.3.1 #1, #3
 - 5.4.1 #2, #3
-- 5.5.2 #5
 - 5.6.7 #5
 
