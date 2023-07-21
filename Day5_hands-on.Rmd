@@ -1,0 +1,28 @@
+---
+title: "Day 5 Hands-On"
+output: html_notebook
+author:
+---
+
+(1) Filter diamonds to create a subset (name it small_dia) containing diamonds less than 3 carats.
+```{r}
+small_dia <-
+  <FILL-IN>
+```
+
+
+(2) Plot a histogram whose bin width is 0.1
+```{r}
+<FILL-IN>
+```
+
+(3) Find the number of diamonds in each of the bins
+```{r}
+small_dia %>% 
+  <FILL-IN>
+```
+
+
+(4) Find how many diamonds are in the tallest bar
+
+
