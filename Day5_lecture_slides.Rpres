@@ -67,8 +67,8 @@ ggplot(data = diamonds) +
 - Distribution of Continuous Variable
 ```{r}
 ggplot(data = diamonds) +
-  geom_histogram(mapping = aes(x = carat), binwidth = 0.1) # Try different bins or binwidth to see different patterns
-# geom_histogram(mapping = aes(x = carat), bins = 20)
+#  geom_histogram(mapping = aes(x = carat), binwidth = 0.1) # Try different bins or binwidth to see different patterns
+ geom_histogram(mapping = aes(x = carat), bins = 200)
 ```
 
 >> A histogram divides the x-axis into equally spaced bins and then uses the height of a bar to display the number of observations that fall in each bin.
@@ -222,14 +222,14 @@ __At this point, let's review our understanding about the following types of var
 
 Put "C" for categorical, "D" for discrete, and "Cn" for continuous variable: 
 
-- `mpg$drv`
-- `mpg$hwy`
-- `mpg$model`
-- `diamonds$cut`
-- `diamonds$carat`
-- `diamonds$price`
-- `flights$arr_delay`
-- `flights$dep_time`
+- `mpg$drv` = C 
+- `mpg$hwy` = Cn
+- `mpg$model` = C
+- `diamonds$cut` = C
+- `diamonds$carat` = Cn
+- `diamonds$price` = Cn
+- `flights$arr_delay` = Cn | D
+- `flights$dep_time` = Cn
 
 
 
@@ -327,7 +327,7 @@ You can also use `count()` to count each group and then use `geom_tile()` to fil
 ```{r}
 diamonds %>% 
   count(color, cut) %>%  
-  ggplot(mapping = aes(x = color, y = cut)) +
+  ggplot(mapping = aes(x = cut, y = color)) +
     geom_tile(mapping = aes(fill = n))
 ```
 
@@ -356,7 +356,19 @@ ggplot(data = small_dia) +
 
 [Homework] 
 ==========
-Read 7.6 and 7.7
+Lab3_2.R
+
+Visualise the distribution of carat, partitioned by price.
+Divide the `price` variable into 10 groups or bins using `cut_number()` function on `price`.
+Hint: How can you change the code below to divide `price` into 10 groups?
+
+
+```{r}
+example <- ggplot(diamonds, aes(x = price, y = carat)) +
+           geom_boxplot() +
+           coord_flip()
+example 
+```
 
 
 Lab6
