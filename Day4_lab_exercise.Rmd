@@ -1,0 +1,97 @@
+---
+title: "Day 4 Lab Exercise"
+output: html_notebook
+---
+
+```{r setup,  include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(nycflights13)
+```
+
+## 5.4.1 Exercise
+
+### #1
+
+Find all flights that
+
+(1) Had an arrival delay of two or more hours
+```{r}
+flights_arr_delay <- <FILL-IN>
+```
+```{r}
+summary(flights_arr_delay$arr_delay) # check the variable, arr_delay
+```
+
+
+(2) Flew to Houston (IAH or HOU)
+```{r}
+flights_iah_hou <- 
+```
+
+```{r}
+factor(flights_iah_hou$dest) %>% 
+  levels() # level check
+```
+
+(3) Were operated by United, American, or Delta
+```{r}
+airlines # check airlines' two letter abbr. to find their carrier codes
+
+<FILL-IN>
+```
+
+
+(4) Departed in summer (July, August, and September)
+```{r}
+flights_7_9 <- <FILL-IN>
+
+levels(factor(flights_7_9$month)) # level check
+```
+
+(5) Arrived more than two hours late, but didn’t leave late
+```{r}
+<FILL-IN>
+
+```
+
+
+(6) Were delayed by at least an hour, but made up over 30 minutes in flight
+
+```{r}
+<FILL-IN>
+```
+
+(7) Departed between midnight and 6am (inclusive)
+```{r}
+<FILL-IN>
+```
+
+## 5.3.1 Exercise
+
+### #1. How could you use arrange() to sort all missing values to the start? (Hint: use is.na()).
+
+```{r}
+<FILL-IN>
+```
+
+
+### #3 Sort flights to find the fastest (highest speed) flights.
+
+```{r}
+<FILL-IN>
+```
+
+## 5.4.1 Exercises
+### #2 What happens if you include the name of a variable multiple times in a select() call?
+```{r}
+<FILL-IN>
+```
+
+## 5.6.7 Exercises
+### #5 Which carrier has the worst delays? Challenge: can you disentangle the effects of bad airports vs. bad carriers? Why/why not? (Hint: think about flights %>% group_by(carrier, dest) %>% summarise(n()))
+```{r}
+<FILL-IN>
+# But is this true? Think about it!
+```
+
