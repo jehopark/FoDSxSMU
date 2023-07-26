@@ -1,0 +1,435 @@
+[Foundations of Data Science with Capstone at SMU, Summer 2023]
+Day 8: Functions
+========================================================
+author: Dr. Jeho Park
+date: 2023-07-26
+autosize: true
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(eval = FALSE)
+library(tidyverse)
+```
+
+DAY7 and LAB7 Review
+========================================================
+
+Day8 Quiz
+
+Any questions?
+
+
+Today's Topic
+============
+- Working with Dates and Times
+- Functions
+- Conditions
+- Iteration
+
+
+
+[Hands-On] Time Zones
+===========
+```{r}
+#library(lubridate) # install.packages("lubridate")
+library(tidyverse)
+today()
+today(tzone = "America/Los_Angeles")
+
+# How about Korea?
+today(tzone = "Asia/Seoul")
+```
+
+See https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+
+Programming in R
+================
+__"Programming is Communication"__
+
+(1) Programming is a way to communicate with computers   
+(2) Programming is a way to communicate with other humans   
+(3) Programming is a way to communicate with your future self   
+
+__"Programming is Writing"__
+
+In many ways, programming is very similar to writing. You write something to communicate. You rewrite something to make your ideas more clear. You make notes on your sentences to help you remember your thoughts and intention.
+
+Functions
+=============
+__Functions allow you to automate common tasks in a more powerful and general way than copy-and-pasting.__
+
+>> When should you write a function?
+
+>> See https://r4ds.had.co.nz/functions.html#when-should-you-write-a-function
+
+How to make a function 
+=================
+
+Three key steps to creating a new function:   
+
+1. You need to pick a name for the function.   
+2. You list the inputs, or arguments, to the function inside function.   
+3. You place the code you have developed in body of the function, a { block that immediately follows function(...)
+
+```{r}
+rescale01 <- function(x) {
+  rng <- range(x, na.rm = TRUE)
+  (x - rng[1]) / (rng[2] - rng[1])
+}
+```
+
+- What is the name of the function?
+- What is input?
+- What is function body?
+- What is output?
+
+Example: 19.3.1 Exercises #1
+
+[Hands-On] Turning into functions
+============
+Exercise 19.2.1: #3
+
+```{r}
+mean(is.na(x)) 
+
+x / sum(x, na.rm = TRUE) 
+
+sd(x, na.rm = TRUE) / mean(x, na.rm = TRUE) 
+```
+
+```{r}
+# Test your functions with x below
+
+x <- c(0, 1, 2, NA, 4, NA)
+
+```
+
+[Hands-On] Turning into functions (cont.)
+============
+
+```{r}
+sum_to_one <- function(y, na.rm = TRUE) {
+  y / sum(y, na.rm = na.rm)
+}
+
+sum_to_one(x, na.rm = TRUE)
+```
+
+```{r}
+prop_na <- function(x) {
+  mean(is.na(x))
+}
+
+prop_na(x)  
+```
+
+```{r}
+# calculates the coefficient of variation `coef_variation`
+# 변동계수는 표준편차를 평균으로 나눈 값. 서로 다른 단위의 변수들의 편차를 비교하기 위해 사용.
+coef_variation <- function(x, na.rm = TRUE) {
+  sd(x, na.rm = na.rm) / mean(x, na.rm = na.rm) 
+}
+
+coef_variation(x)
+
+```
+
+[Hands-On] Turning into functions (cont.)
+============
+
+```{r}
+sum_to_one <- function(y, na.rm = FALSE) {
+  y / sum(y, na.rm = na.rm)
+}
+
+sum_to_one(x, na.rm = TRUE)
+```
+
+```{r}
+prop_na <- function(x) {
+  mean(is.na(x))
+}
+
+prop_na(x)  
+```
+
+```{r}
+# calculates the coefficient of variation `coef_variation`
+# 변동계수는 표준편차를 평균으로 나눈 값. 서로 다른 단위의 변수들의 편차를 비교하기 위해 사용.
+coef_variation <- function(z, na.rm = FALSE) {
+  sd(x, na.rm = na.rm) / mean(x, na.rm = na.rm)
+}
+coef_variation(x, na.rm = TRUE)
+
+```
+
+
+Some Tips for Creating Functions
+=================
+
+1. Use descriptive name with snake_case
+
+2. Use a common prefix, rather than suffix
+```{r}
+# Good
+input_select()
+input_checkbox()
+input_text()
+
+# Not so good
+select_input()
+checkbox_input()
+text_input()
+```
+
+
+Some Tips for Creating Functions (cont)
+==========
+3. Avoid overriding existing functions and variables
+```{r}
+mean <- function(x) {
+  sum(x, na.rm = TRUE)/length(x)
+} # Don't do this
+```
+
+4. Use lots of comments and break up your file into easily readable chunks.
+```{r}
+# Coefficient of Variation ------
+coef_variation <- function(z, na.rm = FALSE) {
+  sd(x, na.rm = na.rm) / mean(x, na.rm = na.rm)
+}
+
+
+# Calculate sum --------------
+x <- sum(x)
+
+```
+
+
+Conditional Execution (If statement)
+==================
+
+```{r}
+if (condition) {
+  # code executed when condition is TRUE
+} else {
+  # code executed when condition is FALSE
+}
+```
+
+Conditional Execution (example)
+==================
+```{r}
+has_name <- function(x) {
+  nms <- names(x)
+  if (is.null(nms)) {
+    rep(FALSE, length(x))
+  } else {
+    !is.na(nms) & nms != ""
+  }
+}
+
+has_name(x)
+is.null(names(x))
+```
+
+Conditions
+=============
+The condition must evaluate to either TRUE or FALSE (i.e., one logical value). 
+
+```{r}
+if (c(TRUE, FALSE)) {} # throws an error for multiple logical values
+ 
+if (NA) {} # Error!
+
+```
+
+
+Be careful about vectorized functions! So, you should never use `&` or `|` if your condition evaluates a multiple values. 
+
+Or use: 
+- any() (Are Some Values True?)
+- all() (Are All Values True?).
+
+```{r}
+if ( all(x & y) ) {
+  print("Here #1")
+} else {
+  print("Here #2")
+}
+```
+
+
+Be careful about using a result of floating point calculation.
+
+```{r}
+x <- sqrt(2)^2
+x
+x == 2
+x - 2
+```
+
+Multiple conditions
+=========
+```{r}
+if (this) {
+  # do that
+} else if (that) {
+  # do something else
+} else {
+  # 
+}
+```
+
+```{r}
+# switch() function
+multi_op <- function(x, y, op) {
+    switch(op,
+       plus = x + y,
+       minus = x - y,
+       times = x * y,
+       divide = x / y,
+       stop("Unknown op!")
+    )
+}
+
+multi_op(2,3,"none")
+```
+
+Function arguments
+===================
+Usually, the first argument is __data__ to compute on.
+
+And then the __details__ of computation follows as the next arguments and should have default values. 
+
+```{r}
+# Compute confidence interval around mean using normal approximation
+mean_ci <- function(x, conf = 0.95) {
+  se <- sd(x) / sqrt(length(x))
+  alpha <- 1 - conf
+  mean(x) + se * qnorm(c(alpha / 2, 1 - alpha / 2))
+}
+
+x <- runif(100)
+mean_ci(x)
+
+mean_ci(x, conf = 0.99)
+
+```
+
+Checking Outputs
+================
+
+It’s good practice to check important preconditions, and throw an error (with stop()), if they are not true:
+
+```{r}
+wt_mean <- function(x, w) {
+  if (length(x) != length(w)) {
+    stop("`x` and `w` must be the same length", call. = FALSE)
+  }
+  sum(w * x) / sum(w)
+}
+```
+ 
+Use `stopifnot(...)`: It throws a generic error message if each argument is __not__ TRUE.
+
+Return values
+===============
+__The value returned by the function is usually the last statement it evaluates, but you can choose to return early by using return().__
+
+Think about using explicit `return()` in a function. Ask there questions:
+
+1. Does returning early make your function easier to read?
+
+2. Can you make your function pipeable?
+
+Compare the following two functions
+=============
+
+```{r}
+f <- function(x) {
+  if (x) {
+    # Do 
+    # something
+    # that
+    # takes
+    # many
+    # lines
+    # to
+    # express
+  } else {
+    # return something short
+  }
+}
+```
+
+------------
+
+```{r}
+f <- function(x) {
+  if (!x) {
+    return(something_short)
+  }
+
+  # Do 
+  # something
+  # that
+  # takes
+  # many
+  # lines
+  # to
+  # express
+}
+```
+
+Is your function pipable?
+=================
+```{r}
+show_missings <- function(df) {
+  n <- sum(is.na(df))
+  cat("Missing values: ", n, "\n", sep = "")
+  
+  invisible(df) # not visible, but will return df
+}
+
+x <- show_missings(mtcars)
+class(x)
+dim(x)
+head(x)
+```
+
+This makes the piping operation possible:
+
+```{r}
+mtcars %>% 
+  show_missings() %>% 
+  mutate(mpg = ifelse(mpg < 20, NA, mpg)) %>% 
+  show_missings() 
+```
+
+Iteration
+==============
+See examples at https://r4ds.had.co.nz/iteration.html#for-loops
+
+1. Prepare output first   
+
+2. Use sequence: `i in seq_along(df)`   
+
+3. Body should contain proper indexing
+ 
+
+```{r}
+output <- vector("double", ncol(df))  # 1. output
+for (i in seq_along(df)) {            # 2. sequence
+  output[[i]] <- median(df[[i]])      # 3. body
+}
+ 
+```
+
+
+Lab8
+=========
+- 16.2.4: #3
+- 19.2.1: #3
+- 19.4.4: #1, #2
