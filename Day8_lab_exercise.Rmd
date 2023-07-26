@@ -1,0 +1,58 @@
+---
+title: "Day 8 Lab 8"
+author: "Jeho Park"
+date: "2023-07-26"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+## 16.2.4 Exercise
+
+### #3. Use the appropriate lubridate function to parse each of the following dates:
+
+```{r}
+d1 <- "January 1, 2010"
+d2 <- "2015-Mar-07"
+d3 <- "06-Jun-2017"
+d4 <- c("August 19 (2015)", "July 1 (2015)")
+d5 <- "12/30/14" # Dec 30, 2014
+```
+
+```{r}
+library(lubridate)
+
+mdy(d1)
+# parse_date(d1, format = "%B %d, %Y")
+
+ymd(d2)
+
+dmy(d3)
+
+mdy(d4)
+
+mdy(d5)
+```
+
+## 19.2.1 Exercise
+
+### #3. Practice turning the following code snippets into functions. Think about what each function does. What would you call it? How many arguments does it need? Can you rewrite it to be more expressive or less duplicative?
+
+```{r eval = FALSE}
+mean(is.na(x))
+
+x / sum(x, na.rm = TRUE)
+
+sd(x, na.rm = TRUE) / mean(x, na.rm = TRUE)
+```
+
+## 19.4.4 Exercise
+
+### #1. What’s the difference between if and ifelse()? Carefully read the help and construct three examples that illustrate the key differences.
+
+
+### #2. Write a greeting function that says “good morning”, “good afternoon”, or “good evening”, depending on the time of day. (Hint: use a time argument that defaults to lubridate::now(). That will make it easier to test your function.) 중요!
+
