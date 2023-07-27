@@ -1,0 +1,47 @@
+---
+title: "Covid-19 Daily Cases in the US"
+output: html_notebook
+author: Jeho Park
+date: 2023-07-26
+---
+
+```{r setup}
+library(tidyverse)
+
+```
+
+## Data Import 
+```{r}
+fileurl <- "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv"
+us_states <- read_csv(fileurl)
+```
+
+# Sum of cumulative daily Covid cases
+```{r}
+# sum_cases <- us_states %>% 
+#  group_by(date) %>% 
+#  summarise(sum_case = sum(cases, na.rm = TRUE)) 
+
+#ggplot(data = sum_cases) +
+#  geom_point(mapping = aes(x = date, y = sum_case))
+
+daily_cases <- us_states %>% 
+  group_by(date) %>% 
+  summarise(sum_cases = sum(cases, na.rm = TRUE))  %>% 
+  mutate(d_case = sum_cases - lag(sum_cases, 1))
+  
+```
+
+## Visualization
+
+```{r}
+library(zoo)
+
+p <- daily_cases %>% 
+        ggplot(aes(x=date, y=d_case)) + 
+        geom_bar(stat="identity", color="orange") +
+        geom_line(aes(y=rollmean(d_case, k = 7, na.pad=TRUE, color = date))) 
+p
+```
+
+
